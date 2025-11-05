@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>404 - Page Non Trouvée</title>
+  <title>504 - Délai d'Attente Dépassé</title>
   
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -39,33 +39,29 @@
       font-size: clamp(120px, 20vw, 200px);
       font-weight: 700;
       line-height: 1;
-      background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #fff 30%));
+      background: linear-gradient(135deg, #ffc107, color-mix(in srgb, #ffc107, #fff 30%));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       margin-bottom: 20px;
-      animation: glitch 3s infinite;
-      position: relative;
+      animation: blink 2s ease-in-out infinite;
     }
     
-    @keyframes glitch {
-      0%, 100% { transform: translate(0); }
-      20% { transform: translate(-2px, 2px); }
-      40% { transform: translate(-2px, -2px); }
-      60% { transform: translate(2px, 2px); }
-      80% { transform: translate(2px, -2px); }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
     }
     
     .error-icon {
       font-size: 80px;
-      color: var(--accent-color);
+      color: #ffc107;
       margin-bottom: 30px;
-      animation: float 3s ease-in-out infinite;
+      animation: rotate 4s linear infinite;
     }
     
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-15px); }
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
     
     .error-title {
@@ -111,7 +107,7 @@
       box-shadow: 0 10px 25px color-mix(in srgb, var(--accent-color), transparent 70%);
     }
     
-    .btn-back {
+    .btn-refresh {
       padding: 14px 32px;
       background: transparent;
       color: var(--default-color);
@@ -123,59 +119,60 @@
       gap: 10px;
       transition: all 0.3s ease;
       border: 2px solid color-mix(in srgb, var(--default-color), transparent 70%);
+      cursor: pointer;
     }
     
-    .btn-back:hover {
+    .btn-refresh:hover {
       border-color: var(--default-color);
       color: var(--default-color);
       transform: translateY(-3px);
     }
     
-    .suggestions {
-      margin-top: 60px;
-      padding-top: 40px;
-      border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    .btn-refresh:hover i {
+      animation: spin 0.5s linear;
     }
     
-    .suggestions h3 {
-      font-size: 20px;
-      color: var(--heading-color);
-      margin-bottom: 25px;
-      font-weight: 400;
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
     
-    .suggestion-links {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
+    .status-box {
+      margin-top: 50px;
+      padding: 25px;
+      background: color-mix(in srgb, var(--surface-color), transparent 50%);
+      border-radius: 12px;
+      border-left: 4px solid #ffc107;
     }
     
-    .suggestion-links a {
-      color: var(--accent-color);
-      text-decoration: none;
+    .status-box h4 {
       font-size: 16px;
-      transition: all 0.3s;
-      position: relative;
+      color: var(--heading-color);
+      margin-bottom: 15px;
+      font-weight: 500;
     }
     
-    .suggestion-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--accent-color);
-      transition: width 0.3s;
+    .status-list {
+      text-align: left;
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
     
-    .suggestion-links a:hover::after {
-      width: 100%;
+    .status-list li {
+      padding: 8px 0;
+      font-size: 14px;
+      color: color-mix(in srgb, var(--default-color), transparent 30%);
+      border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 92%);
     }
     
-    .suggestion-links a:hover {
-      color: color-mix(in srgb, var(--accent-color), #fff 20%);
+    .status-list li:last-child {
+      border-bottom: none;
+    }
+    
+    .status-list li i {
+      margin-right: 10px;
+      color: var(--accent-color);
     }
   </style>
 </head>
@@ -186,16 +183,16 @@
     <div class="error-container">
       
       <div class="error-icon">
-        <i class="bi bi-compass"></i>
+        <i class="bi bi-hourglass-split"></i>
       </div>
       
-      <h1 class="error-code">404</h1>
+      <h1 class="error-code">504</h1>
       
-      <h2 class="error-title">Oups ! Page Introuvable</h2>
+      <h2 class="error-title">Délai d'Attente Dépassé</h2>
       
       <p class="error-description">
-        La page que vous recherchez semble avoir disparu dans les méandres du web. 
-        Elle a peut-être été déplacée, supprimée, ou n'a jamais existé.
+        Le serveur met trop de temps à répondre. Il peut être temporairement surchargé 
+        ou en maintenance. Veuillez réessayer dans quelques instants.
       </p>
       
       <div class="error-actions">
@@ -203,20 +200,20 @@
           <i class="bi bi-house-door"></i>
           Retour à l'accueil
         </a>
-        <a href="javascript:history.back()" class="btn-back">
-          <i class="bi bi-arrow-left"></i>
-          Page précédente
+        <a onclick="location.reload()" class="btn-refresh">
+          <i class="bi bi-arrow-clockwise"></i>
+          Actualiser la page
         </a>
       </div>
       
-      <div class="suggestions">
-        <h3>Vous cherchez peut-être :</h3>
-        <div class="suggestion-links">
-          <a href="index.html#about">À propos</a>
-          <a href="index.html#services">Services</a>
-          <a href="index.html#portfolio">Portfolio</a>
-          <a href="index.html#contact">Contact</a>
-        </div>
+      <div class="status-box">
+        <h4><i class="bi bi-list-check"></i> Que Faire ?</h4>
+        <ul class="status-list">
+          <li><i class="bi bi-check-circle"></i> Attendez quelques minutes et réessayez</li>
+          <li><i class="bi bi-check-circle"></i> Vérifiez votre connexion Internet</li>
+          <li><i class="bi bi-check-circle"></i> Actualisez la page avec F5 ou Ctrl+R</li>
+          <li><i class="bi bi-check-circle"></i> Si le problème persiste, contactez-nous</li>
+        </ul>
       </div>
       
     </div>

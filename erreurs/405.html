@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>404 - Page Non Trouvée</title>
+  <title>405 - Méthode Non Autorisée</title>
   
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -39,33 +39,30 @@
       font-size: clamp(120px, 20vw, 200px);
       font-weight: 700;
       line-height: 1;
-      background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), #fff 30%));
+      background: linear-gradient(135deg, #dc3545, color-mix(in srgb, #dc3545, #fff 30%));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       margin-bottom: 20px;
-      animation: glitch 3s infinite;
-      position: relative;
+      animation: pulse 2s ease-in-out infinite;
     }
     
-    @keyframes glitch {
-      0%, 100% { transform: translate(0); }
-      20% { transform: translate(-2px, 2px); }
-      40% { transform: translate(-2px, -2px); }
-      60% { transform: translate(2px, 2px); }
-      80% { transform: translate(2px, -2px); }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
     }
     
     .error-icon {
       font-size: 80px;
-      color: var(--accent-color);
+      color: #dc3545;
       margin-bottom: 30px;
-      animation: float 3s ease-in-out infinite;
+      animation: shake 3s ease-in-out infinite;
     }
     
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-15px); }
+    @keyframes shake {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-10deg); }
+      75% { transform: rotate(10deg); }
     }
     
     .error-title {
@@ -131,51 +128,26 @@
       transform: translateY(-3px);
     }
     
-    .suggestions {
-      margin-top: 60px;
-      padding-top: 40px;
-      border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    .tech-info {
+      margin-top: 50px;
+      padding: 25px;
+      background: color-mix(in srgb, var(--surface-color), transparent 50%);
+      border-radius: 12px;
+      border-left: 4px solid #dc3545;
     }
     
-    .suggestions h3 {
-      font-size: 20px;
-      color: var(--heading-color);
-      margin-bottom: 25px;
-      font-weight: 400;
-    }
-    
-    .suggestion-links {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    
-    .suggestion-links a {
-      color: var(--accent-color);
-      text-decoration: none;
+    .tech-info h4 {
       font-size: 16px;
-      transition: all 0.3s;
-      position: relative;
+      color: var(--heading-color);
+      margin-bottom: 15px;
+      font-weight: 500;
     }
     
-    .suggestion-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--accent-color);
-      transition: width 0.3s;
-    }
-    
-    .suggestion-links a:hover::after {
-      width: 100%;
-    }
-    
-    .suggestion-links a:hover {
-      color: color-mix(in srgb, var(--accent-color), #fff 20%);
+    .tech-info p {
+      font-size: 14px;
+      color: color-mix(in srgb, var(--default-color), transparent 40%);
+      margin: 0;
+      line-height: 1.6;
     }
   </style>
 </head>
@@ -186,16 +158,16 @@
     <div class="error-container">
       
       <div class="error-icon">
-        <i class="bi bi-compass"></i>
+        <i class="bi bi-shield-exclamation"></i>
       </div>
       
-      <h1 class="error-code">404</h1>
+      <h1 class="error-code">405</h1>
       
-      <h2 class="error-title">Oups ! Page Introuvable</h2>
+      <h2 class="error-title">Méthode Non Autorisée</h2>
       
       <p class="error-description">
-        La page que vous recherchez semble avoir disparu dans les méandres du web. 
-        Elle a peut-être été déplacée, supprimée, ou n'a jamais existé.
+        La méthode utilisée pour accéder à cette ressource n'est pas autorisée. 
+        Le serveur refuse de traiter cette requête avec la méthode HTTP spécifiée.
       </p>
       
       <div class="error-actions">
@@ -209,14 +181,12 @@
         </a>
       </div>
       
-      <div class="suggestions">
-        <h3>Vous cherchez peut-être :</h3>
-        <div class="suggestion-links">
-          <a href="index.html#about">À propos</a>
-          <a href="index.html#services">Services</a>
-          <a href="index.html#portfolio">Portfolio</a>
-          <a href="index.html#contact">Contact</a>
-        </div>
+      <div class="tech-info">
+        <h4><i class="bi bi-info-circle"></i> Information Technique</h4>
+        <p>
+          Cette erreur survient généralement lorsqu'une requête utilise une méthode HTTP (GET, POST, PUT, DELETE, etc.) 
+          non supportée par la ressource demandée. Si vous pensez qu'il s'agit d'une erreur, veuillez contacter l'administrateur.
+        </p>
       </div>
       
     </div>
