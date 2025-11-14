@@ -101,10 +101,10 @@
                             <div class="terminal-dot bg-red-500"></div>
                             <div class="terminal-dot bg-yellow-500"></div>
                             <div class="terminal-dot bg-green-500"></div>
-                            <span class="text-xs text-gray-500 ml-2">about.js</span>
+                            <span class="text-xs text-gray-500 ml-2" data-i18n="about.terminalFile">about.js</span>
                         </div>
                         <div class="p-4 mono text-sm">
-                            <p class="text-gray-400">
+                            <p class="text-gray-400" data-i18n-html="about.terminalCode">
                                 <span class="text-purple-400">const</span> anis = {<br>
                                 &nbsp;&nbsp;<span class="text-blue-400">age:</span> 18,<br>
                                 &nbsp;&nbsp;<span class="text-blue-400">location:</span> <span class="text-green-400">"Nancy"</span>,<br>

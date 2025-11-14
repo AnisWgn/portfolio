@@ -23,7 +23,9 @@
                     title: 'About Me',
                     text1: 'Hey! I\'m Anis, a developer who enjoys turning caffeine into code. I\'ve been building web experiences for 2+ years, and I still get excited when my code compiles without errors.',
                     text2: 'When I\'m not wrestling with JavaScript frameworks or arguing with CSS, you\'ll find me contributing to open source, learning about new technologies, or explaining to my rubber duck why my code should work.',
-                    quote: '"It worked on my machine" - Me, probably'
+                    quote: '"It worked on my machine" - Me, probably',
+                    terminalFile: 'about.js',
+                    terminalCode: '<span class="text-purple-400">const</span> anis = {<br>&nbsp;&nbsp;<span class="text-blue-400">age:</span> 18,<br>&nbsp;&nbsp;<span class="text-blue-400">location:</span> <span class="text-green-400">"Nancy"</span>,<br>&nbsp;&nbsp;<span class="text-blue-400">coffee:</span> <span class="text-orange-400">true</span>,<br>&nbsp;&nbsp;<span class="text-blue-400">bugs:</span> <span class="text-red-400">false</span>, <span class="text-gray-500">// lies</span><br>&nbsp;&nbsp;<span class="text-blue-400">hobbies:</span> [<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">"building random stuff at 3am"</span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">"breaking prod on fridays"</span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">"collecting mechanical keyboards"</span><br>&nbsp;&nbsp;]<br>};'
                 },
                 projects: {
                     title: 'Things I\'ve Built',
@@ -75,7 +77,9 @@
                     title: 'À Propos',
                     text1: 'Salut ! Je suis Anis, un développeur qui aime transformer la caféine en code. Je construis des expériences web depuis plus de 2 ans, et je suis toujours excité quand mon code compile sans erreurs.',
                     text2: 'Quand je ne me bats pas avec les frameworks JavaScript ou que je ne discute pas avec CSS, vous me trouverez contribuant à l\'open source, apprenant de nouvelles technologies, ou expliquant à mon canard en caoutchouc pourquoi mon code devrait fonctionner.',
-                    quote: '"Ça marchait sur ma machine" - Moi, probablement'
+                    quote: '"Ça marchait sur ma machine" - Moi, probablement',
+                    terminalFile: 'about.js',
+                    terminalCode: '<span class="text-purple-400">const</span> anis = {<br>&nbsp;&nbsp;<span class="text-blue-400">age:</span> 18,<br>&nbsp;&nbsp;<span class="text-blue-400">location:</span> <span class="text-green-400">"Nancy"</span>,<br>&nbsp;&nbsp;<span class="text-blue-400">coffee:</span> <span class="text-orange-400">true</span>,<br>&nbsp;&nbsp;<span class="text-blue-400">bugs:</span> <span class="text-red-400">false</span>, <span class="text-gray-500">// mensonges</span><br>&nbsp;&nbsp;<span class="text-blue-400">hobbies:</span> [<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">"construire des trucs aléatoires à 3h du matin"</span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">"casser la prod le vendredi"</span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">"collectionner des claviers mécaniques"</span><br>&nbsp;&nbsp;]<br>};'
                 },
                 projects: {
                     title: 'Ce Que J\'ai Construit',
@@ -113,6 +117,7 @@
 
         // Fonction pour traduire le contenu
         function translatePage(lang) {
+            // Traduire les éléments avec textContent
             const elements = document.querySelectorAll('[data-i18n]');
             elements.forEach(element => {
                 const key = element.getAttribute('data-i18n');
@@ -125,6 +130,22 @@
                 
                 if (translation) {
                     element.textContent = translation;
+                }
+            });
+            
+            // Traduire les éléments avec innerHTML (pour le code terminal)
+            const htmlElements = document.querySelectorAll('[data-i18n-html]');
+            htmlElements.forEach(element => {
+                const key = element.getAttribute('data-i18n-html');
+                const keys = key.split('.');
+                let translation = translations[lang];
+                
+                for (const k of keys) {
+                    translation = translation?.[k];
+                }
+                
+                if (translation) {
+                    element.innerHTML = translation;
                 }
             });
             
