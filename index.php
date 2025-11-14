@@ -6,6 +6,7 @@
     <title>Anis Wagner | Creative Developer</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
 <body class="bg-black text-gray-100 relative">
     
