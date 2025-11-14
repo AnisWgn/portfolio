@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Chen | Creative Developer</title>
+    <title>Anis Wagner | Creative Developer</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -20,51 +20,57 @@
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <div class="mono text-green-400 text-sm">
-                    <span class="text-gray-500">alex@dev:</span><span class="text-blue-400">~</span>$
+                    <span class="text-gray-500">anis@dev:</span><span class="text-blue-400">~</span>$
                     <span class="typing"> portfolio --run</span>
                 </div>
-                <div class="flex gap-6">
-                    <a href="#about" class="hover:text-green-400 transition-colors cursor-pointer">about()</a>
-                    <a href="#projects" class="hover:text-green-400 transition-colors cursor-pointer">.projects</a>
-                    <a href="#skills" class="hover:text-green-400 transition-colors cursor-pointer">skills[]</a>
-                    <a href="#contact" class="hover:text-green-400 transition-colors cursor-pointer">connect()</a>
+                <div class="flex gap-6 items-center">
+                    <a href="#home" class="nav-link hover:text-green-400 transition-colors cursor-pointer active" data-page="home" data-i18n="nav.home">home()</a>
+                    <a href="#about" class="nav-link hover:text-green-400 transition-colors cursor-pointer" data-page="about" data-i18n="nav.about">about()</a>
+                    <a href="#projects" class="nav-link hover:text-green-400 transition-colors cursor-pointer" data-page="projects" data-i18n="nav.projects">.projects</a>
+                    <a href="#skills" class="nav-link hover:text-green-400 transition-colors cursor-pointer" data-page="skills" data-i18n="nav.skills">skills[]</a>
+                    <a href="#contact" class="nav-link hover:text-green-400 transition-colors cursor-pointer" data-page="contact" data-i18n="nav.contact">connect()</a>
+                    <button id="langToggle" class="px-3 py-1 border border-green-400/50 rounded text-sm hover:bg-green-400/10 transition-colors cursor-pointer">
+                        <span id="langDisplay">EN</span>
+                    </button>
                 </div>
             </div>
         </div>
     </nav>
     
-    <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div class="absolute top-20 right-10 text-green-400/20 ascii-art hidden lg:block">
-    ██████╗ ███████╗██╗   ██╗
-    ██╔══██╗██╔════╝██║   ██║
-    ██║  ██║█████╗  ██║   ██║
-    ██║  ██║██╔══╝  ╚██╗ ██╔╝
-    ██████╔╝███████╗ ╚████╔╝ 
-    ╚═════╝ ╚══════╝  ╚═══╝  
+    <!-- Main Content Container -->
+    <div id="app-content">
+        <!-- Hero Section (Home) -->
+        <section id="home" class="page-section relative overflow-hidden active">
+        <div class="absolute top-20 right-10 text-green-400/20 ascii-art hidden lg:block" style="white-space: pre; font-family: 'JetBrains Mono', monospace; line-height: 0.8;">
+██████╗ ███████╗██╗   ██╗
+██╔══██╗██╔════╝██║   ██║
+██║  ██║█████╗  ██║   ██║
+██║  ██║██╔══╝  ╚██╗ ██╔╝
+██████╔╝███████╗ ╚████╔╝ 
+╚═════╝ ╚══════╝  ╚═══╝  
         </div>
         
-        <div class="container mx-auto px-6 z-10">
+        <div class="container mx-auto px-6 z-10 w-full">
             <div class="max-w-4xl">
-                <p class="text-green-400 mono mb-4">// Hello, World! I'm</p>
-                <h1 class="glitch mb-6">Alex Chen</h1>
+                <p class="text-green-400 mono mb-4" data-i18n="hero.greeting">// Hello, World! I'm</p>
+                <h1 class="glitch mb-6">Anis Wagner</h1>
                 <div class="flex items-center gap-4 mb-8">
                     <div class="blob w-3 h-3 bg-green-400"></div>
                     <h2 class="text-2xl md:text-3xl font-light">
-                        Full-Stack Developer & 
-                        <span class="text-green-400">Creative Coder</span>
+                        <span data-i18n="hero.title1">Full-Stack Developer</span> & 
+                        <span class="text-green-400" data-i18n="hero.title2">Creative Coder</span>
                     </h2>
                 </div>
                 <p class="text-gray-400 text-lg mb-8 leading-relaxed">
-                    I build things for the web. Sometimes they work on the first try.*
+                    <span data-i18n="hero.description">I build things for the web. Sometimes they work on the first try.*</span>
                     <br>
-                    <span class="text-xs">*Results not typical</span>
+                    <span class="text-xs" data-i18n="hero.disclaimer">*Results not typical</span>
                 </p>
                 <div class="flex gap-4">
-                    <button class="px-6 py-3 bg-green-500 text-black font-semibold rounded-lg hover:bg-green-400 transition-all hover:scale-105 cursor-pointer">
+                    <button class="px-6 py-3 bg-green-500 text-black font-semibold rounded-lg hover:bg-green-400 transition-all hover:scale-105 cursor-pointer" data-i18n="hero.workButton">
                         View My Work
                     </button>
-                    <button class="px-6 py-3 border border-green-500 text-green-400 rounded-lg hover:bg-green-500/10 transition-all cursor-pointer">
+                    <button class="px-6 py-3 border border-green-500 text-green-400 rounded-lg hover:bg-green-500/10 transition-all cursor-pointer" data-i18n="hero.cvButton">
                         Download CV
                     </button>
                 </div>
@@ -80,14 +86,14 @@
         </div>
     </section>
     
-    <!-- About Section -->
-    <section id="about" class="py-20 relative">
-        <div class="container mx-auto px-6">
+        <!-- About Section -->
+        <section id="about" class="page-section relative">
+        <div class="container mx-auto px-6 w-full">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
                     <h3 class="text-3xl font-bold mb-6">
                         <span class="text-green-400 mono">&lt;</span>
-                        About Me
+                        <span data-i18n="about.title">About Me</span>
                         <span class="text-green-400 mono">/&gt;</span>
                     </h3>
                     <div class="terminal">
@@ -99,9 +105,9 @@
                         </div>
                         <div class="p-4 mono text-sm">
                             <p class="text-gray-400">
-                                <span class="text-purple-400">const</span> alex = {<br>
-                                &nbsp;&nbsp;<span class="text-blue-400">age:</span> 27,<br>
-                                &nbsp;&nbsp;<span class="text-blue-400">location:</span> <span class="text-green-400">"San Francisco"</span>,<br>
+                                <span class="text-purple-400">const</span> anis = {<br>
+                                &nbsp;&nbsp;<span class="text-blue-400">age:</span> 18,<br>
+                                &nbsp;&nbsp;<span class="text-blue-400">location:</span> <span class="text-green-400">"Nancy"</span>,<br>
                                 &nbsp;&nbsp;<span class="text-blue-400">coffee:</span> <span class="text-orange-400">true</span>,<br>
                                 &nbsp;&nbsp;<span class="text-blue-400">bugs:</span> <span class="text-red-400">false</span>, <span class="text-gray-500">// lies</span><br>
                                 &nbsp;&nbsp;<span class="text-blue-400">hobbies:</span> [<br>
@@ -115,17 +121,17 @@
                     </div>
                 </div>
                 <div>
-                    <p class="text-gray-300 mb-4">
-                        Hey! I'm Alex, a developer who enjoys turning caffeine into code. 
-                        I've been building web experiences for 5+ years, and I still get excited 
+                    <p class="text-gray-300 mb-4" data-i18n="about.text1">
+                        Hey! I'm Anis, a developer who enjoys turning caffeine into code. 
+                        I've been building web experiences for 2+ years, and I still get excited 
                         when my code compiles without errors.
                     </p>
-                    <p class="text-gray-300 mb-4">
+                    <p class="text-gray-300 mb-4" data-i18n="about.text2">
                         When I'm not wrestling with JavaScript frameworks or arguing with CSS, 
                         you'll find me contributing to open source, learning about new technologies, 
                         or explaining to my rubber duck why my code should work.
                     </p>
-                    <p class="text-gray-400 text-sm italic">
+                    <p class="text-gray-400 text-sm italic" data-i18n="about.quote">
                         "It worked on my machine" - Me, probably
                     </p>
                 </div>
@@ -133,12 +139,12 @@
         </div>
     </section>
     
-    <!-- Projects Section -->
-    <section id="projects" class="py-20">
-        <div class="container mx-auto px-6">
+        <!-- Projects Section -->
+        <section id="projects" class="page-section">
+        <div class="container mx-auto px-6 w-full">
             <h3 class="text-3xl font-bold mb-12 text-center">
-                Things I've Built
-                <span class="text-green-400 text-lg block mt-2">// Some actually work</span>
+                <span data-i18n="projects.title">Things I've Built</span>
+                <span class="text-green-400 text-lg block mt-2" data-i18n="projects.subtitle">// Some actually work</span>
             </h3>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -150,8 +156,8 @@
                             <span class="text-xs px-2 py-1 bg-green-400/20 text-green-400 rounded">Live</span>
                         </div>
                     </div>
-                    <h4 class="text-xl font-semibold mb-2">TaskFlow Pro</h4>
-                    <p class="text-gray-400 text-sm mb-4">
+                    <h4 class="text-xl font-semibold mb-2" data-i18n="projects.project1.title">TaskFlow Pro</h4>
+                    <p class="text-gray-400 text-sm mb-4" data-i18n="projects.project1.description">
                         A task management app that actually makes you want to be productive. 
                         Features include dark mode (obviously) and a pomodoro timer that judges you.
                     </p>
@@ -170,8 +176,8 @@
                             <span class="text-xs px-2 py-1 bg-blue-400/20 text-blue-400 rounded">Beta</span>
                         </div>
                     </div>
-                    <h4 class="text-xl font-semibold mb-2">CodeRacer</h4>
-                    <p class="text-gray-400 text-sm mb-4">
+                    <h4 class="text-xl font-semibold mb-2" data-i18n="projects.project2.title">CodeRacer</h4>
+                    <p class="text-gray-400 text-sm mb-4" data-i18n="projects.project2.description">
                         Competitive coding game where you race against time and other devs. 
                         Warning: May cause excessive competitiveness and keyboard abuse.
                     </p>
@@ -190,8 +196,8 @@
                             <span class="text-xs px-2 py-1 bg-yellow-400/20 text-yellow-400 rounded">WIP</span>
                         </div>
                     </div>
-                    <h4 class="text-xl font-semibold mb-2">BugHunter AI</h4>
-                    <p class="text-gray-400 text-sm mb-4">
+                    <h4 class="text-xl font-semibold mb-2" data-i18n="projects.project3.title">BugHunter AI</h4>
+                    <p class="text-gray-400 text-sm mb-4" data-i18n="projects.project3.description">
                         An AI that finds bugs in your code. Currently finding bugs in its own code. 
                         It's complicated.
                     </p>
@@ -205,12 +211,12 @@
         </div>
     </section>
     
-    <!-- Skills Section -->
-    <section id="skills" class="py-20">
-        <div class="container mx-auto px-6">
+        <!-- Skills Section -->
+        <section id="skills" class="page-section">
+        <div class="container mx-auto px-6 w-full">
             <h3 class="text-3xl font-bold mb-12 text-center">
-                Tech Stack
-                <span class="text-green-400 text-lg block mt-2">// Tools I pretend to understand</span>
+                <span data-i18n="skills.title">Tech Stack</span>
+                <span class="text-green-400 text-lg block mt-2" data-i18n="skills.subtitle">// Tools I pretend to understand</span>
             </h3>
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
@@ -274,11 +280,11 @@
         </div>
     </section>
     
-    <!-- Contact Section -->
-    <section id="contact" class="py-20">
-        <div class="container mx-auto px-6 text-center">
-            <h3 class="text-3xl font-bold mb-6">Let's Connect</h3>
-            <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+        <!-- Contact Section -->
+        <section id="contact" class="page-section">
+        <div class="container mx-auto px-6 text-center w-full">
+            <h3 class="text-3xl font-bold mb-6" data-i18n="contact.title">Let's Connect</h3>
+            <p class="text-gray-400 mb-8 max-w-2xl mx-auto" data-i18n="contact.description">
                 Currently accepting messages, memes, and job offers. 
                 Response time varies based on coffee levels.
             </p>
@@ -291,11 +297,12 @@
             </div>
             
             <p class="text-xs text-gray-600">
-                Made with ☕ and questionable music choices at 2 AM<br>
-                © 2024 Alex Chen | Last debugged: Yesterday, probably
+                <span data-i18n="footer.made">Made with ☕ and questionable music choices at 2 AM</span><br>
+                <span data-i18n="footer.copyright">© 2025 Anis Wagner | Last debugged: Yesterday, probably</span>
             </p>
         </div>
-    </section>
+        </section>
+    </div>
     
     <script src="js/script.js"></script>
 </body>

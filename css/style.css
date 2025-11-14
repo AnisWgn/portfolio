@@ -172,10 +172,13 @@ body {
 /* ASCII art container */
 .ascii-art {
     color: #10b981;
-    font-size: 0.5rem;
-    line-height: 0.5rem;
+    font-size: 1rem;
+    line-height: 0.8;
     white-space: pre;
-    letter-spacing: 0.1em;
+    letter-spacing: 0;
+    font-family: 'JetBrains Mono', monospace;
+    z-index: 0;
+    pointer-events: none;
 }
 
 /* Irregular shape */
@@ -190,5 +193,108 @@ body {
     }
     50% {
         border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+    }
+}
+
+/* Language toggle button */
+#langToggle {
+    font-family: 'JetBrains Mono', monospace;
+    transition: all 0.3s ease;
+}
+
+#langToggle:hover {
+    border-color: #10b981;
+    background-color: rgba(16, 185, 129, 0.1);
+    transform: scale(1.05);
+}
+
+#langToggle:active {
+    transform: scale(0.95);
+}
+
+/* SPA Navigation Styles */
+.page-section {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+    min-height: calc(100vh - 80px);
+    padding-top: 80px;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-section.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Active navigation link */
+.nav-link.active {
+    color: #10b981;
+    text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+}
+
+/* Click effect */
+.click-effect {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.8) 0%, rgba(16, 185, 129, 0) 70%);
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%) scale(0);
+    animation: clickRipple 0.6s ease-out;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+}
+
+@keyframes clickRipple {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(8);
+        opacity: 0;
+    }
+}
+
+/* Particules de clic */
+.click-particles {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+}
+
+.click-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #10b981;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.8);
+    animation: particleFloat 1s ease-out forwards;
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty)) scale(0);
+        opacity: 0;
     }
 }
