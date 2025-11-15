@@ -312,7 +312,7 @@
         }
         
         // ==========================================
-        // EFFET DE CLIC
+        // EFFET DE CLIC AMÉLIORÉ
         // ==========================================
         document.addEventListener('click', (e) => {
             // Ne pas créer d'effet sur les éléments interactifs (boutons, liens)
@@ -323,7 +323,7 @@
             const x = e.clientX;
             const y = e.clientY;
             
-            // Effet ripple principal
+            // Effet ripple principal avec plusieurs ondes
             const ripple = document.createElement('div');
             ripple.className = 'click-effect';
             ripple.style.left = x + 'px';
@@ -333,17 +333,18 @@
             // Supprimer l'élément après l'animation
             setTimeout(() => {
                 ripple.remove();
-            }, 600);
+            }, 800);
             
-            // Particules autour du clic
-            const particleCount = 8;
+            // Particules améliorées autour du clic
+            const particleCount = 12;
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'click-particle';
                 
-                // Angle et distance aléatoires
+                // Angle uniforme pour une distribution en cercle
                 const angle = (Math.PI * 2 * i) / particleCount;
-                const distance = 30 + Math.random() * 40;
+                // Distance variable pour plus de dynamisme
+                const distance = 40 + Math.random() * 60;
                 const tx = Math.cos(angle) * distance;
                 const ty = Math.sin(angle) * distance;
                 
@@ -352,14 +353,25 @@
                 particle.style.setProperty('--tx', tx + 'px');
                 particle.style.setProperty('--ty', ty + 'px');
                 
+                // Taille variable pour plus de variété
+                const size = 4 + Math.random() * 4;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                
                 // Délai aléatoire pour un effet plus naturel
-                particle.style.animationDelay = (Math.random() * 0.2) + 's';
+                particle.style.animationDelay = (Math.random() * 0.15) + 's';
+                
+                // Durée d'animation variable
+                const duration = 0.8 + Math.random() * 0.4;
+                particle.style.animationDuration = duration + 's';
                 
                 document.body.appendChild(particle);
                 
                 // Supprimer après l'animation
                 setTimeout(() => {
-                    particle.remove();
-                }, 1200);
+                    if (particle.parentNode) {
+                        particle.remove();
+                    }
+                }, 1500);
             }
         });
