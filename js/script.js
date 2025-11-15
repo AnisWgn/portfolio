@@ -323,7 +323,7 @@
             const x = e.clientX;
             const y = e.clientY;
             
-            // Effet ripple principal avec plusieurs ondes
+            // Effet ripple subtil
             const ripple = document.createElement('div');
             ripple.className = 'click-effect';
             ripple.style.left = x + 'px';
@@ -333,18 +333,18 @@
             // Supprimer l'élément après l'animation
             setTimeout(() => {
                 ripple.remove();
-            }, 800);
+            }, 600);
             
-            // Particules améliorées autour du clic
-            const particleCount = 12;
+            // Particules visibles autour du clic
+            const particleCount = 8;
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'click-particle';
                 
                 // Angle uniforme pour une distribution en cercle
                 const angle = (Math.PI * 2 * i) / particleCount;
-                // Distance variable pour plus de dynamisme
-                const distance = 40 + Math.random() * 60;
+                // Distance modérée pour être visible mais pas trop
+                const distance = 25 + Math.random() * 25;
                 const tx = Math.cos(angle) * distance;
                 const ty = Math.sin(angle) * distance;
                 
@@ -353,17 +353,8 @@
                 particle.style.setProperty('--tx', tx + 'px');
                 particle.style.setProperty('--ty', ty + 'px');
                 
-                // Taille variable pour plus de variété
-                const size = 4 + Math.random() * 4;
-                particle.style.width = size + 'px';
-                particle.style.height = size + 'px';
-                
-                // Délai aléatoire pour un effet plus naturel
-                particle.style.animationDelay = (Math.random() * 0.15) + 's';
-                
-                // Durée d'animation variable
-                const duration = 0.8 + Math.random() * 0.4;
-                particle.style.animationDuration = duration + 's';
+                // Délai aléatoire minimal
+                particle.style.animationDelay = (Math.random() * 0.1) + 's';
                 
                 document.body.appendChild(particle);
                 
@@ -372,6 +363,6 @@
                     if (particle.parentNode) {
                         particle.remove();
                     }
-                }, 1500);
+                }, 1000);
             }
         });
