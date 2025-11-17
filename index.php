@@ -12,6 +12,7 @@
     
     <div class="noise"></div>
     
+    
     // Custom Cursor Elements
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
