@@ -245,7 +245,7 @@
                     </div>
                 </div>
                 <div class="text-center group cursor-pointer">
-                    <div class="text-5xl mb-2 group-hover:scale-110 transition-transform"></div>
+                    <div class="text-5xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-solid fa-database"></i></div>
                     <p class="text-sm">SQL</p>
                     <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
                         <div class="bg-green-400 h-1 rounded-full" style="width: 70%"></div>
