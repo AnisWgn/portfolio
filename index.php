@@ -259,7 +259,7 @@
                     </div>
                 </div>
                 <div class="text-center group cursor-pointer">
-                    <div class="text-5xl mb-2 group-hover:scale-110 transition-transform">🚀</div>
+                    <div class="text-5xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-brands fa-node-js" style="color: #44ff00;"></i></div>
                     <p class="text-sm">Node.js</p>
                     <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
                         <div class="bg-green-400 h-1 rounded-full" style="width: 85%"></div>
