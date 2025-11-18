@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anis Wagner | Creative Developer</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<<<<<<< HEAD
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-=======
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
->>>>>>> 212030c237b9f59826cdf5016cc6c35c9ece2325
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
@@ -163,20 +159,19 @@
                             <span class="text-xs px-2 py-1 bg-green-400/20 text-green-400 rounded">Live</span>
                         </div>
                     </div>
-                    <h4 class="text-xl font-semibold mb-2" data-i18n="projects.project1.title">TaskFlow Pro</h4>
+                    <h4 class="text-xl font-semibold mb-2" data-i18n="projects.project1.title">Rock Paper Scissors</h4>
                     <p class="text-gray-400 text-sm mb-4" data-i18n="projects.project1.description">
-                        A task management app that actually makes you want to be productive. 
-                        Features include dark mode (obviously) and a pomodoro timer that judges you.
+                        A rock paper scissor game with a sleek UI and interactive gameplay. 
+                        Challenge the computer and see if you can outsmart it!
                     </p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-2 py-1 bg-gray-800 rounded">React</span>
-                        <span class="text-xs px-2 py-1 bg-gray-800 rounded">Node.js</span>
-                        <span class="text-xs px-2 py-1 bg-gray-800 rounded">MongoDB</span>
+                        <span class="text-xs px-2 py-1 bg-gray-800 rounded">Js</span>
+                        <span class="text-xs px-2 py-1 bg-gray-800 rounded">Css</span>
                     </div>
                 </div>
                 
                 <!-- Project 2 -->
-                <div class="project-card bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:border-green-400/50 transition-all">
+                <div class="project-card bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:border-green-400/50 transition-all" onclick="../Rock_Paper_Scissor">
                     <div class="flex justify-between items-start mb-4">
                         <div class="text-green-400 text-3xl">🎮</div>
                         <div class="flex gap-2">
@@ -235,11 +230,7 @@
                     </div>
                 </div>
                 <div class="text-center group cursor-pointer">
-<<<<<<< HEAD
                     <div class="text-5xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-brands fa-js" style="color: #FFD43B;"></i></div>
-=======
-                    <div class="text-5xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-brands fa-square-js" style="color: #FFD43B;"></i></div>
->>>>>>> 212030c237b9f59826cdf5016cc6c35c9ece2325
                     <p class="text-sm">JavaScript</p>
                     <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
                         <div class="bg-green-400 h-1 rounded-full" style="width: 85%"></div>
@@ -253,45 +244,26 @@
                     </div>
                 </div>
                 <div class="text-center group cursor-pointer">
-<<<<<<< HEAD
                     <div class="text-5xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-solid fa-database" style="color: #336791;"></i></div>
-=======
-                    <div class="text-5xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-solid fa-database"></i></div>
->>>>>>> 212030c237b9f59826cdf5016cc6c35c9ece2325
                     <p class="text-sm">SQL</p>
                     <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
                         <div class="bg-green-400 h-1 rounded-full" style="width: 70%"></div>
                     </div>
                 </div>
                 <div class="text-center group cursor-pointer">
-<<<<<<< HEAD
+
                     <div class="text-5xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-brands fa-css3-alt" style="color: #005eff;"></i></div>
                     <p class="text-sm">CSS</p>
-=======
-                    <div class="text-5xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-brands fa-css3-alt" style="color: #003a66;"></i></div>
-                    <p class="text-sm">CSS/Tailwind</p>
->>>>>>> 212030c237b9f59826cdf5016cc6c35c9ece2325
                     <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
                         <div class="bg-green-400 h-1 rounded-full" style="width: 90%"></div>
                     </div>
                 </div>
                 <div class="text-center group cursor-pointer">
-<<<<<<< HEAD
-                    <div class="text-5xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-brands fa-java" style="color: #007396;"></i></div>
-                    <p class="text-sm">Java</p>
-=======
                     <div class="text-5xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-brands fa-php" style="color: #777bb4;"></i></div>
                     <p class="text-sm">php</p>
->>>>>>> 212030c237b9f59826cdf5016cc6c35c9ece2325
+
                     <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
                         <div class="bg-green-400 h-1 rounded-full" style="width: 60%"></div>
-                    </div>
-                </div>
-                <div class="text-center group cursor-pointer">
-                    <div class="text-5xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-brands fa-php" style="color: #B197FC;"></i></div>
-                    <p class="text-sm">php</p>
-                    <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
-                        <div class="bg-green-400 h-1 rounded-full" style="width: 75%"></div>
                     </div>
                 </div>
                 <div class="text-center group cursor-pointer">

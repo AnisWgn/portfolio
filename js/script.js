@@ -31,8 +31,8 @@
                     title: 'Things I\'ve Built',
                     subtitle: '// Some actually work',
                     project1: {
-                        title: 'TaskFlow Pro',
-                        description: 'A task management app that actually makes you want to be productive. Features include dark mode (obviously) and a pomodoro timer that judges you.'
+                        title: 'Rock Paper Scissor',
+                        description: 'A rock paper scissor game with a sleek UI and interactive gameplay in dark theme (obviously).'
                     },
                     project2: {
                         title: 'CodeRacer',
@@ -85,8 +85,8 @@
                     title: 'Ce Que J\'ai Construit',
                     subtitle: '// Certains fonctionnent vraiment',
                     project1: {
-                        title: 'TaskFlow Pro',
-                        description: 'Une application de gestion de tâches qui vous donne vraiment envie d\'être productif. Fonctionnalités incluent le mode sombre (évidemment) et un minuteur pomodoro qui vous juge.'
+                        title: 'Pierre Papier Ciseaux',
+                        description: 'Un jeu de pierre-papier-ciseaux avec une interface élégante et un gameplay interactif en thème sombre (évidemment).'
                     },
                     project2: {
                         title: 'CodeRacer',
