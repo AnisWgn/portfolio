@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anis Wagner | Creative Developer</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
@@ -225,11 +226,11 @@
                     <div class="text-5xl mb-2 group-hover:scale-110 transition-transform">⚛️</div>
                     <p class="text-sm">React</p>
                     <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
-                        <div class="bg-green-400 h-1 rounded-full" style="width: 90%"></div>
+                        <div class="bg-green-400 h-1 rounded-full" style="width: 55%"></div>
                     </div>
                 </div>
                 <div class="text-center group cursor-pointer">
-                    <div class="text-5xl mb-2 group-hover:scale-110 transition-transform">🟨</div>
+                    <div class="text-5xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-brands fa-js" style="color: #FFD43B;"></i></div>
                     <p class="text-sm">JavaScript</p>
                     <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
                         <div class="bg-green-400 h-1 rounded-full" style="width: 85%"></div>
@@ -243,31 +244,38 @@
                     </div>
                 </div>
                 <div class="text-center group cursor-pointer">
-                    <div class="text-5xl mb-2 group-hover:scale-110 transition-transform">🗄️</div>
-                    <p class="text-sm">PostgreSQL</p>
+                    <div class="text-5xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-solid fa-database" style="color: #336791;"></i></div>
+                    <p class="text-sm">SQL</p>
                     <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
                         <div class="bg-green-400 h-1 rounded-full" style="width: 70%"></div>
                     </div>
                 </div>
                 <div class="text-center group cursor-pointer">
-                    <div class="text-5xl mb-2 group-hover:scale-110 transition-transform">🎨</div>
-                    <p class="text-sm">CSS/Tailwind</p>
+                    <div class="text-5xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-brands fa-css3-alt" style="color: #005eff;"></i></div>
+                    <p class="text-sm">CSS</p>
                     <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
-                        <div class="bg-green-400 h-1 rounded-full" style="width: 80%"></div>
+                        <div class="bg-green-400 h-1 rounded-full" style="width: 90%"></div>
                     </div>
                 </div>
                 <div class="text-center group cursor-pointer">
-                    <div class="text-5xl mb-2 group-hover:scale-110 transition-transform">🚀</div>
-                    <p class="text-sm">Node.js</p>
+                    <div class="text-5xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-brands fa-java" style="color: #007396;"></i></div>
+                    <p class="text-sm">Java</p>
                     <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
-                        <div class="bg-green-400 h-1 rounded-full" style="width: 85%"></div>
+                        <div class="bg-green-400 h-1 rounded-full" style="width: 60%"></div>
                     </div>
                 </div>
                 <div class="text-center group cursor-pointer">
-                    <div class="text-5xl mb-2 group-hover:scale-110 transition-transform">🐳</div>
-                    <p class="text-sm">Docker</p>
+                    <div class="text-5xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-brands fa-php" style="color: #B197FC;"></i></div>
+                    <p class="text-sm">php</p>
                     <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
-                        <div class="bg-green-400 h-1 rounded-full" style="width: 65%"></div>
+                        <div class="bg-green-400 h-1 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="text-center group cursor-pointer">
+                    <div class="text-5xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-brands fa-git-alt"></i></div>
+                    <p class="text-sm">Git</p>
+                    <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
+                        <div class="bg-green-400 h-1 rounded-full" style="width: 100%"></div>
                     </div>
                 </div>
                 <div class="text-center group cursor-pointer">
