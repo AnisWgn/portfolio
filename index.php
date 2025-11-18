@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anis Wagner | Creative Developer</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<<<<<<< HEAD
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+=======
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+>>>>>>> 212030c237b9f59826cdf5016cc6c35c9ece2325
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
 </head>
@@ -13,7 +17,8 @@
     
     <div class="noise"></div>
     
-    
+
+    // Custom Cursor Elements
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
     
@@ -230,7 +235,11 @@
                     </div>
                 </div>
                 <div class="text-center group cursor-pointer">
+<<<<<<< HEAD
                     <div class="text-5xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-brands fa-js" style="color: #FFD43B;"></i></div>
+=======
+                    <div class="text-5xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-brands fa-square-js" style="color: #FFD43B;"></i></div>
+>>>>>>> 212030c237b9f59826cdf5016cc6c35c9ece2325
                     <p class="text-sm">JavaScript</p>
                     <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
                         <div class="bg-green-400 h-1 rounded-full" style="width: 85%"></div>
@@ -244,22 +253,36 @@
                     </div>
                 </div>
                 <div class="text-center group cursor-pointer">
+<<<<<<< HEAD
                     <div class="text-5xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-solid fa-database" style="color: #336791;"></i></div>
+=======
+                    <div class="text-5xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-solid fa-database"></i></div>
+>>>>>>> 212030c237b9f59826cdf5016cc6c35c9ece2325
                     <p class="text-sm">SQL</p>
                     <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
                         <div class="bg-green-400 h-1 rounded-full" style="width: 70%"></div>
                     </div>
                 </div>
                 <div class="text-center group cursor-pointer">
+<<<<<<< HEAD
                     <div class="text-5xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-brands fa-css3-alt" style="color: #005eff;"></i></div>
                     <p class="text-sm">CSS</p>
+=======
+                    <div class="text-5xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-brands fa-css3-alt" style="color: #003a66;"></i></div>
+                    <p class="text-sm">CSS/Tailwind</p>
+>>>>>>> 212030c237b9f59826cdf5016cc6c35c9ece2325
                     <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
                         <div class="bg-green-400 h-1 rounded-full" style="width: 90%"></div>
                     </div>
                 </div>
                 <div class="text-center group cursor-pointer">
+<<<<<<< HEAD
                     <div class="text-5xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-brands fa-java" style="color: #007396;"></i></div>
                     <p class="text-sm">Java</p>
+=======
+                    <div class="text-5xl mb-2 group-hover:scale-110 transition-transform"><i class="fa-brands fa-php" style="color: #777bb4;"></i></div>
+                    <p class="text-sm">php</p>
+>>>>>>> 212030c237b9f59826cdf5016cc6c35c9ece2325
                     <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
                         <div class="bg-green-400 h-1 rounded-full" style="width: 60%"></div>
                     </div>
