@@ -1,0 +1,55 @@
+        <!-- Skills Section -->
+        <section id="skills" class="page-section">
+        <div class="container mx-auto px-6 w-full">
+            <h3 class="text-3xl font-bold mb-12 text-center">
+                <span>Stack Technique</span>
+                <span class="text-green-400 text-lg block mt-2">// Outils que je prétends comprendre</span>
+            </h3>
+
+            <div class="grid gap-10 max-w-4xl mx-auto">
+                <!-- Languages -->
+                <div x-data="skillsComponent()" x-init="loadSkills()">
+                    <template x-if="languages.length > 0">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-15 text-center md:text-right"><span class="button">Langages</span></h4>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                                <template x-for="lang in languages" :key="lang.name">
+                                    <div class="text-center group cursor-pointer">
+                                        <div class="text-5xl mb-2 group-hover:scale-110 transition-transform">
+                                            <i :class="getIconClass(lang.name)" :style="'color: ' + getColor(lang.name)"></i>
+                                        </div>
+                                        <p class="text-sm" x-text="lang.name"></p>
+                                        <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
+                                            <div class="bg-green-400 h-1 rounded-full" :style="'width: ' + lang.level + '%'"></div>
+                                        </div>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+                <!-- Tools -->
+                <div x-data="toolsComponent()" x-init="loadTools()">
+                    <template x-if="technologies.length > 0">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-15 mt-5 text-center md:text-right"><span class="button">Outils & Frameworks</span></h4>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                                <template x-for="tech in technologies" :key="tech.name">
+                                        <div class="text-center group cursor-pointer">
+                                            <div class="text-5xl mb-2 group-hover:scale-110 transition-transform">
+                                                <i :class="getIconClass(tech.name)" :style="'color: ' + getColor(tech.name)"></i>
+                                            </div>
+                                            <p class="text-sm" x-text="tech.name"></p>
+                                            <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
+                                                <div class="bg-green-400 h-1 rounded-full" :style="'width: ' + tech.level + '%'"></div>
+                                            </div>
+                                        </div>
+                                </template>
+                            </div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </section>

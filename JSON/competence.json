@@ -1,0 +1,66 @@
+[
+  {
+    "languages": [
+      {
+        "name": "HTML",
+        "icon_url": "https://cdn.example.com/icons/html5.svg",
+        "icon_class": "devicon-html5-plain",
+        "versions": ["HTML5"],
+        "level": "50"
+      },
+      {
+        "name": "JavaScript",
+        "icon_url": "https://cdn.example.com/icons/javascript.svg",
+        "icon_class": "devicon-javascript-plain",
+        "versions": ["ES6", "ES2022"],
+        "level": "40"
+      },
+      {
+        "name": "PHP",
+        "icon_url": "https://cdn.example.com/icons/php.svg",
+        "icon_class": "devicon-php-plain",
+        "versions": ["PHP 7", "PHP 8"],
+        "level": "30"
+      },
+      {
+        "name": "SQL",
+        "icon_url": "https://cdn.example.com/icons/sql.svg",
+        "icon_class": "devicon-sql-plain",
+        "versions": ["MySQL", "PostgreSQL"],
+        "level": "20"
+      }
+    ]
+  },
+  {
+    "technologies": [
+      {
+        "name": "React",
+        "icon_url": "https://cdn.example.com/icons/react.svg",
+        "icon_class": "devicon-react-original",
+        "versions": ["17", "18"],
+        "level": "40"
+      },
+      {
+        "name": "Node.js",
+        "icon_url": "https://cdn.example.com/icons/nodejs.svg",
+        "icon_class": "devicon-nodejs-plain",
+        "versions": ["14", "16"],
+        "level": "30"
+      },
+      {
+        "name": "Docker",
+        "icon_url": "https://cdn.example.com/icons/docker.svg",
+        "icon_class": "devicon-docker-plain",
+        "versions": ["20.10"],
+        "level": "20"
+      },
+      {
+        "name": "Git",
+        "icon_url": "https://cdn.example.com/icons/git.svg",
+        "icon_class": "devicon-git-plain",
+        "versions": ["2.30"],
+        "level": "50"
+       }
+     ]
+  }
+]

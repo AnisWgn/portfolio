@@ -1,175 +1,102 @@
-        // ==========================================
-        // SYSTÈME DE TRADUCTION
-        // ==========================================
-        const translations = {
-            en: {
-                nav: {
-                    home: 'home()',
-                    about: 'about()',
-                    projects: '.projects',
-                    skills: 'skills[]',
-                    contact: 'connect()'
-                },
-                hero: {
-                    greeting: '// Hello, World! I\'m',
-                    title1: 'Full-Stack Developer',
-                    title2: 'Creative Coder',
-                    description: 'I build things for the web. Sometimes they work on the first try.*',
-                    disclaimer: '*Results not typical',
-                    workButton: 'View My Work',
-                    cvButton: 'Download CV'
-                },
-                about: {
-                    title: 'About Me',
-                    text1: 'Hey! I\'m Anis, a developer who enjoys turning caffeine into code. I\'ve been building web experiences for 2+ years, and I still get excited when my code compiles without errors.',
-                    text2: 'When I\'m not wrestling with JavaScript frameworks or arguing with CSS, you\'ll find me contributing to open source, learning about new technologies, or explaining to my rubber duck why my code should work.',
-                    quote: '"It worked on my machine" - Me, probably',
-                    terminalFile: 'about.js',
-                    terminalCode: '<span class="text-purple-400">const</span> anis = {<br>&nbsp;&nbsp;<span class="text-blue-400">age:</span> 18,<br>&nbsp;&nbsp;<span class="text-blue-400">location:</span> <span class="text-green-400">"Nancy"</span>,<br>&nbsp;&nbsp;<span class="text-blue-400">coffee:</span> <span class="text-orange-400">true</span>,<br>&nbsp;&nbsp;<span class="text-blue-400">bugs:</span> <span class="text-red-400">false</span>, <span class="text-gray-500">// lies</span><br>&nbsp;&nbsp;<span class="text-blue-400">hobbies:</span> [<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">"building random stuff at 3am"</span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">"breaking prod on fridays"</span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">"collecting mechanical keyboards"</span><br>&nbsp;&nbsp;]<br>};'
-                },
-                projects: {
-                    title: 'Things I\'ve Built',
-                    subtitle: '// Some actually work',
-                    project1: {
-                        title: 'Rock Paper Scissor',
-                        description: 'A rock paper scissor game with a sleek UI and interactive gameplay in dark theme (obviously).'
-                    },
-                    project2: {
-                        title: 'CodeRacer',
-                        description: 'Competitive coding game where you race against time and other devs. Warning: May cause excessive competitiveness and keyboard abuse.'
-                    },
-                    project3: {
-                        title: 'BugHunter AI',
-                        description: 'An AI that finds bugs in your code. Currently finding bugs in its own code. It\'s complicated.'
+        // Skills component for languages
+        function skillsComponent() {
+            return {
+                languages: [],
+                async loadSkills() {
+                    try {
+                        const response = await fetch('JSON/competence.json');
+                        const data = await response.json();
+                        this.languages = data[0].languages || [];
+                    } catch (error) {
+                        console.error('Error loading skills:', error);
                     }
                 },
-                skills: {
-                    title: 'Tech Stack',
-                    subtitle: '// Tools I pretend to understand'
+                getIconClass(name) {
+                    const icons = {
+                        'HTML': 'fa-brands fa-html5',
+                        'JavaScript': 'fa-brands fa-js',
+                        'PHP': 'fa-brands fa-php',
+                        'SQL': 'fa-solid fa-database'
+                    };
+                    return icons[name] || 'fa-solid fa-code';
                 },
-                contact: {
-                    title: 'Let\'s Connect',
-                    description: 'Currently accepting messages, memes, and job offers. Response time varies based on coffee levels.'
-                },
-                footer: {
-                    made: 'Made with ☕ and questionable music choices at 2 AM',
-                    copyright: '© 2025 Anis Wagner | Last debugged: Yesterday, probably'
-                }
-            },
-            fr: {
-                nav: {
-                    home: 'accueil()',
-                    about: 'à propos()',
-                    projects: '.projets',
-                    skills: 'compétences[]',
-                    contact: 'contact()'
-                },
-                hero: {
-                    greeting: '// Hello, world ! Je suis',
-                    title1: 'Développeur Full-Stack',
-                    title2: 'Codeur Créatif',
-                    description: 'Je construis des choses pour le web. Parfois ça fonctionne du premier coup.*',
-                    disclaimer: '*Résultats non typiques',
-                    workButton: 'Voir Mon Travail',
-                    cvButton: 'Télécharger CV'
-                },
-                about: {
-                    title: 'À Propos',
-                    text1: 'Salut ! Je suis Anis, un développeur qui aime transformer la caféine en code. Je construis des expériences web depuis plus de 2 ans, et je suis toujours excité quand mon code compile sans erreurs.',
-                    text2: 'Quand je ne me bats pas avec les frameworks JavaScript ou que je ne discute pas avec CSS, vous me trouverez contribuant à l\'open source, apprenant de nouvelles technologies, ou expliquant à mon canard en caoutchouc pourquoi mon code devrait fonctionner.',
-                    quote: '"Ça marchait sur ma machine" - Moi, probablement',
-                    terminalFile: 'about.js',
-                    terminalCode: '<span class="text-purple-400">const</span> anis = {<br>&nbsp;&nbsp;<span class="text-blue-400">age:</span> 18,<br>&nbsp;&nbsp;<span class="text-blue-400">location:</span> <span class="text-green-400">"Nancy"</span>,<br>&nbsp;&nbsp;<span class="text-blue-400">coffee:</span> <span class="text-orange-400">true</span>,<br>&nbsp;&nbsp;<span class="text-blue-400">bugs:</span> <span class="text-red-400">false</span>, <span class="text-gray-500">// mensonges</span><br>&nbsp;&nbsp;<span class="text-blue-400">hobbies:</span> [<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">"construire des trucs aléatoires à 3h du matin"</span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">"casser la prod le vendredi"</span>,<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-green-400">"collectionner des claviers mécaniques"</span><br>&nbsp;&nbsp;]<br>};'
-                },
-                projects: {
-                    title: 'Ce Que J\'ai Construit',
-                    subtitle: '// Certains fonctionnent vraiment',
-                    project1: {
-                        title: 'Pierre Papier Ciseaux',
-                        description: 'Un jeu de pierre-papier-ciseaux avec une interface élégante et un gameplay interactif en thème sombre (évidemment).'
-                    },
-                    project2: {
-                        title: 'CodeRacer',
-                        description: 'Jeu de codage compétitif où vous courez contre le temps et d\'autres devs. Attention : Peut causer une compétitivité excessive et des abus de clavier.'
-                    },
-                    project3: {
-                        title: 'BugHunter AI',
-                        description: 'Une IA qui trouve des bugs dans votre code. Trouve actuellement des bugs dans son propre code. C\'est compliqué.'
-                    }
-                },
-                skills: {
-                    title: 'Stack Technique',
-                    subtitle: '// Outils que je prétends comprendre'
-                },
-                contact: {
-                    title: 'Restons en Contact',
-                    description: 'J\'accepte actuellement les messages, les mèmes et les offres d\'emploi. Le temps de réponse varie selon le niveau de café.'
-                },
-                footer: {
-                    made: 'Fait avec ☕ et des choix musicaux douteux à 2h du matin',
-                    copyright: '© 2025 Anis Wagner | Dernier debug : Hier, probablement'
+                getColor(name) {
+                    const colors = {
+                        'HTML': '#E34F26',
+                        'JavaScript': '#F7DF1E',
+                        'PHP': '#777BB4',
+                        'SQL': '#336791'
+                    };
+                    return colors[name] || '#10b981';
                 }
             }
-        };
-
-        // Récupérer la langue sauvegardée ou utiliser l'anglais par défaut
-        let currentLang = localStorage.getItem('portfolioLang') || 'en';
-
-        // Fonction pour traduire le contenu
-        function translatePage(lang) {
-            // Traduire les éléments avec textContent
-            const elements = document.querySelectorAll('[data-i18n]');
-            elements.forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                const keys = key.split('.');
-                let translation = translations[lang];
-                
-                for (const k of keys) {
-                    translation = translation?.[k];
-                }
-                
-                if (translation) {
-                    element.textContent = translation;
-                }
-            });
-            
-            // Traduire les éléments avec innerHTML (pour le code terminal)
-            const htmlElements = document.querySelectorAll('[data-i18n-html]');
-            htmlElements.forEach(element => {
-                const key = element.getAttribute('data-i18n-html');
-                const keys = key.split('.');
-                let translation = translations[lang];
-                
-                for (const k of keys) {
-                    translation = translation?.[k];
-                }
-                
-                if (translation) {
-                    element.innerHTML = translation;
-                }
-            });
-            
-            // Mettre à jour l'affichage de la langue
-            document.getElementById('langDisplay').textContent = lang.toUpperCase();
-            
-            // Sauvegarder la préférence
-            localStorage.setItem('portfolioLang', lang);
-            currentLang = lang;
         }
 
-        // Initialiser la traduction et la navigation au chargement du DOM
-        document.addEventListener('DOMContentLoaded', () => {
-            translatePage(currentLang);
-            initNavigation();
-            
-            // Gérer le clic sur le bouton de langue
-            const langToggle = document.getElementById('langToggle');
-            if (langToggle) {
-                langToggle.addEventListener('click', () => {
-                    const newLang = currentLang === 'en' ? 'fr' : 'en';
-                    translatePage(newLang);
-                });
+        // Tools component for technologies
+        function toolsComponent() {
+            return {
+                technologies: [],
+                async loadTools() {
+                    try {
+                        const response = await fetch('JSON/competence.json');
+                        const data = await response.json();
+                        this.technologies = data[1].technologies || [];
+                    } catch (error) {
+                        console.error('Error loading tools:', error);
+                    }
+                },
+                getIconClass(name) {
+                    const icons = {
+                        'React': 'fa-brands fa-react',
+                        'Node.js': 'fa-brands fa-node-js',
+                        'Docker': 'fa-brands fa-docker',
+                        'Git': 'fa-brands fa-git-alt'
+                    };
+                    return icons[name] || 'fa-solid fa-cogs';
+                },
+                getColor(name) {
+                    const colors = {
+                        'React': '#61DAFB',
+                        'Node.js': '#339933',
+                        'Docker': '#2496ED',
+                        'Git': '#F05032'
+                    };
+                    return colors[name] || '#10b981';
+                }
             }
+        }
+
+        // Load included HTML files
+        async function loadIncludes() {
+            const includes = [
+                { id: 'header-include', file: 'section/header.html' },
+                { id: 'home-include', file: 'section/home.html' },
+                { id: 'about-include', file: 'section/about.html' },
+                { id: 'projects-include', file: 'section/projects.html' },
+                { id: 'skills-include', file: 'section/skills.html' },
+                { id: 'contact-include', file: 'section/contact.html' }
+            ];
+
+            for (const include of includes) {
+                try {
+                    const response = await fetch(include.file);
+                    const html = await response.text();
+                    document.getElementById(include.id).innerHTML = html;
+                } catch (error) {
+                    console.error(`Error loading ${include.file}:`, error);
+                }
+            }
+
+            // Set dynamic content after includes are loaded
+            const birthday = new Date(2006,12,17);
+            const age = new Date().getFullYear() - birthday.getFullYear();
+            document.getElementById("age").textContent = age;
+            document.getElementById('today_date').textContent = new Date().getFullYear();
+        }
+
+        // Load includes and then initialize navigation
+        loadIncludes().then(() => {
+            initNavigation();
         });
 
         // Custom cursor
@@ -254,8 +181,8 @@
                 });
             });
             
-            // Gérer le bouton "View My Work" dans le hero
-            document.querySelector('[data-i18n="hero.workButton"]')?.addEventListener('click', () => {
+            // Gérer le bouton "Voir Mon Travail" dans le hero
+            document.getElementById('workButton')?.addEventListener('click', () => {
                 navigateToPage('projects');
             });
             
