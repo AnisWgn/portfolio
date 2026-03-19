@@ -3,31 +3,52 @@
     "languages": [
       {
         "name": "HTML",
-        "icon_url": "https://cdn.example.com/icons/html5.svg",
+        "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
         "icon_class": "devicon-html5-plain",
         "versions": ["HTML5"],
-        "level": "50"
+        "level": "100"
+      },
+      {
+        "name": "CSS",
+        "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+        "icon_class": "devicon-css3-plain",
+        "versions": ["CSS3"],
+        "level": "85"
       },
       {
         "name": "JavaScript",
-        "icon_url": "https://cdn.example.com/icons/javascript.svg",
+        "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
         "icon_class": "devicon-javascript-plain",
         "versions": ["ES6", "ES2022"],
-        "level": "40"
+        "level": "80"
       },
       {
         "name": "PHP",
-        "icon_url": "https://cdn.example.com/icons/php.svg",
+        "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg",
         "icon_class": "devicon-php-plain",
         "versions": ["PHP 7", "PHP 8"],
-        "level": "30"
+        "level": "70"
       },
       {
         "name": "SQL",
-        "icon_url": "https://cdn.example.com/icons/sql.svg",
+        "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
         "icon_class": "devicon-sql-plain",
         "versions": ["MySQL", "PostgreSQL"],
         "level": "20"
+      },
+      {
+        "name": "Python",
+        "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+        "icon_class": "devicon-python-plain",
+        "versions": ["3.8", "3.9"],
+        "level": "60"
+      },
+      {
+        "name" : "Java",
+        "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
+        "icon_class": "devicon-java-plain",
+        "versions": ["Java 8", "Java 11"],
+        "level": "15"
       }
     ]
   },
@@ -35,28 +56,28 @@
     "technologies": [
       {
         "name": "React",
-        "icon_url": "https://cdn.example.com/icons/react.svg",
+        "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
         "icon_class": "devicon-react-original",
         "versions": ["17", "18"],
         "level": "40"
       },
       {
         "name": "Node.js",
-        "icon_url": "https://cdn.example.com/icons/nodejs.svg",
+        "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
         "icon_class": "devicon-nodejs-plain",
         "versions": ["14", "16"],
         "level": "30"
       },
       {
         "name": "Docker",
-        "icon_url": "https://cdn.example.com/icons/docker.svg",
+        "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
         "icon_class": "devicon-docker-plain",
         "versions": ["20.10"],
         "level": "20"
       },
       {
         "name": "Git",
-        "icon_url": "https://cdn.example.com/icons/git.svg",
+        "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
         "icon_class": "devicon-git-plain",
         "versions": ["2.30"],
         "level": "50"

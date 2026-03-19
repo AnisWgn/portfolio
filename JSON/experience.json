@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Concept Innov Habitat",
+        "image": "images/experience/cih.jpg",
+        "paragraph": "Conception et développement d'un site vitrine entièrement personnalisable, permettant à l'administrateur de gérer l'intégralité du contenu sans compétences techniques. Mise en place de CRUD avancés pour chaque section de la page, avec un éditeur visuel permettant de modifier en temps réel les couleurs, dimensions et dispositions des éléments."
+    },
+    {
+        "name": "MP44",
+        "image": "images/experience/mp44.jpg",
+        "paragraph": "Conception d'interfaces utilisateur pour bornes interactives, développement de pipelines d'automatisation (scraping de données, envoi de mails automatisés) et participation à la création de solutions SaaS. Divers projets sont soumis à confidentialité et ne peuvent être divulgués avant leur lancement public."
+    }
+]

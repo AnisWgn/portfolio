@@ -1,0 +1,46 @@
+        <!-- Veille Informatique Section -->
+        <section id="veille" class="page-section">
+        <div class="container mx-auto px-6 w-full">
+            <h3 class="text-3xl font-bold mb-12 text-center">
+                <span>Veille Informatique</span>
+                <span class="text-green-400 text-lg block mt-2">// Articles Dev.to - Dernières tendances</span>
+            </h3>
+
+            <div x-data="veilleComponent()" x-init="loadVeille()">
+                <template x-if="loading">
+                    <div class="flex justify-center py-16">
+                        <div class="animate-pulse text-gray-500">Chargement des articles...</div>
+                    </div>
+                </template>
+                <template x-if="!loading && articles.length > 0">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                        <template x-for="article in articles" :key="article.id">
+                            <a :href="article.url" target="_blank" rel="noopener noreferrer" class="group block bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden hover:border-green-400/50 transition-all cursor-pointer">
+                                <div class="aspect-video bg-gray-800 overflow-hidden">
+                                    <img :src="article.cover_image || article.social_image || 'https://placehold.co/600x340/1f2937/10b981?text=Dev.to'" :alt="article.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" @error="$el.src='https://placehold.co/600x340/1f2937/10b981?text=Article'">
+                                </div>
+                                <div class="p-5">
+                                    <h4 class="text-lg font-semibold text-gray-100 group-hover:text-green-400 transition-colors line-clamp-2 mb-2" x-text="article.title"></h4>
+                                    <p class="text-gray-400 text-sm line-clamp-2 mb-4" x-text="article.description || ''"></p>
+                                    <div class="flex flex-wrap gap-2 mb-3">
+                                        <template x-for="tag in (article.tag_list || []).slice(0, 3)" :key="tag">
+                                            <span class="text-xs px-2 py-0.5 bg-gray-800 text-gray-400 rounded" x-text="tag"></span>
+                                        </template>
+                                    </div>
+                                    <div class="flex items-center justify-between text-xs text-gray-500">
+                                        <span x-text="article.user?.name || 'Dev.to'"></span>
+                                        <span x-text="(article.readable_publish_date || '') + ' · ' + (article.reading_time_minutes || 0) + ' min'"></span>
+                                    </div>
+                                </div>
+                            </a>
+                        </template>
+                    </div>
+                </template>
+                <template x-if="!loading && articles.length === 0 && error">
+                    <div class="text-center py-16 text-gray-500">
+                        <p>Impossible de charger les articles. Vérifiez votre connexion.</p>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>

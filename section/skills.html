@@ -15,8 +15,8 @@
                             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                                 <template x-for="lang in languages" :key="lang.name">
                                     <div class="text-center group cursor-pointer">
-                                        <div class="text-5xl mb-2 group-hover:scale-110 transition-transform">
-                                            <i :class="getIconClass(lang.name)" :style="'color: ' + getColor(lang.name)"></i>
+                                        <div class="text-5xl mb-2 group-hover:scale-110 transition-transform flex justify-center">
+                                            <img :src="lang.icon_url || getIconClass(lang.name)" :alt="lang.name" class="w-12 h-12 object-contain" @error="$el.style.display='none'">
                                         </div>
                                         <p class="text-sm" x-text="lang.name"></p>
                                         <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
@@ -37,12 +37,12 @@
                             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                                 <template x-for="tech in technologies" :key="tech.name">
                                         <div class="text-center group cursor-pointer">
-                                            <div class="text-5xl mb-2 group-hover:scale-110 transition-transform">
-                                                <i :class="getIconClass(tech.name)" :style="'color: ' + getColor(tech.name)"></i>
+                                            <div class="text-5xl mb-2 group-hover:scale-110 transition-transform flex justify-center">
+                                                <img :src="tech.icon_url || getIconClass(tech.name)" :alt="tech.name" class="w-12 h-12 object-contain" @error="$el.style.display='none'">
                                             </div>
                                             <p class="text-sm" x-text="tech.name"></p>
                                             <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
-                                                <div class="bg-green-400 h-1 rounded-full" :style="'width: ' + tech.level + '%'"></div>
+                                                <div class="bg-green-400 h-1 rounded-full" :style="{ width: tech.level + '%' }"></div>
                                             </div>
                                         </div>
                                 </template>

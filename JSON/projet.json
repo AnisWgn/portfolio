@@ -1,53 +1,62 @@
 [
     {
-        "name" : "",
-        "description" : "",
-        "status" : "",
-        "icon" : "",
-        "url" : "",
-        "langages" : [
-            "",
-            "",
-            ""
-        ],
-        "technologies" : [
-            "",
-            "",
-            ""
-        ]
+        "name": "AgoraWeb",
+        "description": "Bibliothèque en ligne avec système CRUD complet pour gérer des plateformes, jeux, genres et plus. Interface d'administration développée avec Symfony et Bootstrap.",
+        "status": "Live",
+        "icon": "📚",
+        "url": "https://github.com/AnisWgn/Agora",
+        "compte_rendu": "",
+        "langages": ["PHP"],
+        "technologies": ["Symfony", "Bootstrap"]
     },
     {
-        "name" : "",
-        "description" : "",
-        "status" : "",
-        "icon" : "",
-        "url" : "",
-        "langages" : [
-            "",
-            "",
-            ""
-        ],
-        "technologies" : [
-            "",
-            "",
-            ""
-        ]
+        "name": "AgoraMobile",
+        "description": "Version mobile d'AgoraWeb : bibliothèque avec système CRUD pour gérer plateformes, jeux, genres. Application développée en React Native.",
+        "status": "Live",
+        "icon": "📱",
+        "url": "https://github.com/AnisWgn/react-native-first-app",
+        "compte_rendu": "",
+        "langages": ["JavaScript"],
+        "technologies": ["React Native"]
     },
     {
-        "name" : "",
-        "description" : "",
-        "status" : "",
-        "icon" : "",
-        "url" : "",
-        "langages" : [
-            "",
-            "",
-            ""
-        ],
-        "technologies" : [
-            "",
-            "",
-            ""
-        ]
+        "name": "PokeGeo",
+        "description": "Jeu web de collection de cartes où les cartes représentent des pays avec attaques, PV, etc. Les trainers sont des dirigeants de pays (passés ou actuels). Développé en HTML, CSS, JavaScript et Tailwind.",
+        "status": "Live",
+        "icon": "🌍",
+        "url": "https://github.com/AnisWgn/pokegeo",
+        "compte_rendu": "",
+        "langages": ["HTML", "CSS", "JavaScript"],
+        "technologies": ["Tailwind"]
+    },
+    {
+        "name": "Adalg",
+        "description": "Plateforme de mise en relation : les entreprises peuvent déposer des offres de stage et les stagiaires peuvent y postuler. Développé en HTML, CSS et PHP sans framework.",
+        "status": "Live",
+        "icon": "💼",
+        "url": "https://github.com/AnisWgn/sitev2",
+        "compte_rendu": "",
+        "langages": ["HTML", "CSS", "PHP"],
+        "technologies": []
+    },
+    {
+        "name": "ChopinVerse",
+        "description": "Application hybride : partie web pour la connexion, choix du personnage et du nom ; partie VR en A-Frame où l'utilisateur choisit le monde dans lequel il souhaite se rendre. Développé en HTML, CSS, PHP et A-Frame.",
+        "status": "Live",
+        "icon": "🥽",
+        "url": "https://github.com/Rajdi16/ChopinVerse",
+        "compte_rendu": "",
+        "langages": ["HTML", "CSS", "PHP"],
+        "technologies": ["A-Frame"]
+    },
+    {
+        "name": "SyncCore",
+        "description": "Application en client dur regroupant des outils essentiels pour développeurs : emploi du temps, agenda, feed de veille informationnelle personnalisable, accès direct à GitHub et autres outils. Développé en HTML, CSS, JavaScript et Electron.js.",
+        "status": "Live",
+        "icon": "🖥️",
+        "url": "https://github.com/AnisWgn/SudoConsole",
+        "compte_rendu": "",
+        "langages": ["HTML", "CSS", "JavaScript"],
+        "technologies": ["Electron.js"]
     }
 ]

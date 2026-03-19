@@ -6,64 +6,42 @@
                 <span class="text-green-400 text-lg block mt-2">// Certains fonctionnent vraiment</span>
             </h3>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="project-card bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:border-green-400/50 transition-all">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="text-green-400 text-3xl">📱</div>
-                        <div class="flex gap-2">
-                            <span class="text-xs px-2 py-1 bg-green-400/20 text-green-400 rounded">Live</span>
-                        </div>
+            <div x-data="projectsComponent()" x-init="loadProjects()">
+                <template x-if="projects.length > 0">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <template x-for="project in projects" :key="project.name">
+                            <div class="project-card bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:border-green-400/50 transition-all">
+                                <div class="flex justify-between items-start mb-4">
+                                    <div class="text-green-400 text-3xl" x-text="project.icon || '📁'"></div>
+                                    <div class="flex gap-2">
+                                        <template x-if="project.status">
+                                            <span class="text-xs px-2 py-1 rounded" :class="getStatusClass(project.status)" x-text="project.status"></span>
+                                        </template>
+                                    </div>
+                                </div>
+                                <h4 class="text-xl font-semibold mb-2" x-text="project.name"></h4>
+                                <p class="text-gray-400 text-sm mb-4" x-text="project.description"></p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <template x-for="tag in [...(project.langages || []), ...(project.technologies || [])].filter(t => t)" :key="tag">
+                                        <span class="text-xs px-2 py-1 bg-gray-800 rounded" x-text="tag"></span>
+                                    </template>
+                                </div>
+                                <div class="flex flex-wrap gap-3">
+                                    <template x-if="project.url">
+                                        <a :href="project.url" target="_self" class="text-sm text-green-400 hover:text-green-300 transition-colors">
+                                            Voir le projet →
+                                        </a>
+                                    </template>
+                                    <template x-if="project.compte_rendu">
+                                        <a :href="project.compte_rendu" target="_self" class="text-sm text-green-400 hover:text-green-300 transition-colors">
+                                            Voir le compte rendu →
+                                        </a>
+                                    </template>
+                                </div>
+                            </div>
+                        </template>
                     </div>
-                    <h4 class="text-xl font-semibold mb-2">Pierre Papier Ciseaux</h4>
-                    <p class="text-gray-400 text-sm mb-4">
-                        Un jeu de pierre-papier-ciseaux avec une interface élégante et un gameplay interactif en thème sombre (évidemment).
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-2 py-1 bg-gray-800 rounded">Js</span>
-                        <span class="text-xs px-2 py-1 bg-gray-800 rounded">Css</span>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:border-green-400/50 transition-all" onclick="../Rock_Paper_Scissor">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="text-green-400 text-3xl">🎮</div>
-                        <div class="flex gap-2">
-                            <span class="text-xs px-2 py-1 bg-blue-400/20 text-blue-400 rounded">Beta</span>
-                        </div>
-                    </div>
-                    <h4 class="text-xl font-semibold mb-2">CodeRacer</h4>
-                    <p class="text-gray-400 text-sm mb-4">
-                        Jeu de codage compétitif où vous courez contre le temps et d'autres devs.
-                        Attention : Peut causer une compétitivité excessive et des abus de clavier.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-2 py-1 bg-gray-800 rounded">Vue.js</span>
-                        <span class="text-xs px-2 py-1 bg-gray-800 rounded">Socket.io</span>
-                        <span class="text-xs px-2 py-1 bg-gray-800 rounded">Redis</span>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card bg-gray-900/50 border border-gray-800 rounded-lg p-6 hover:border-green-400/50 transition-all">
-                    <div class="flex justify-between items-start mb-4">
-                        <div class="text-green-400 text-3xl">🤖</div>
-                        <div class="flex gap-2">
-                            <span class="text-xs px-2 py-1 bg-yellow-400/20 text-yellow-400 rounded">WIP</span>
-                        </div>
-                    </div>
-                    <h4 class="text-xl font-semibold mb-2">BugHunter AI</h4>
-                    <p class="text-gray-400 text-sm mb-4">
-                        Une IA qui trouve des bugs dans votre code. Trouve actuellement des bugs dans son propre code.
-                        C'est compliqué.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="text-xs px-2 py-1 bg-gray-800 rounded">Python</span>
-                        <span class="text-xs px-2 py-1 bg-gray-800 rounded">TensorFlow</span>
-                        <span class="text-xs px-2 py-1 bg-gray-800 rounded">Coffee</span>
-                    </div>
-                </div>
+                </template>
             </div>
         </div>
     </section>

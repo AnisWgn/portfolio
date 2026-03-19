@@ -9,12 +9,23 @@
                 <div class="flex gap-6 items-center">
                     <div class="ui-btn">
                     <a href="#home" class="nav-link hover:text-green-400 transition-colors cursor-pointer active" data-page="home"><span>accueil()</span></a>
-                    </div><div class="ui-btn">
-                    <a href="#about" class="nav-link hover:text-green-400 transition-colors cursor-pointer" data-page="about"><span>à propos()</span></a>
+                    </div><div class="nav-dropdown-wrapper">
+                    <div class="ui-btn">
+                        <a href="#about" class="nav-link hover:text-green-400 transition-colors cursor-pointer" data-page="about"><span>à propos()</span> <span class="text-xs">▾</span></a>
+                    </div>
+                    <div class="nav-dropdown">
+                        <div class="nav-dropdown-menu">
+                            <a href="#about" class="nav-link nav-dropdown-item" data-page="about">À propos</a>
+                            <a href="#experience" class="nav-link nav-dropdown-item" data-page="experience">Expérience</a>
+                            <a href="#realisations" class="nav-link nav-dropdown-item" data-page="realisations">Réalisations</a>
+                        </div>
+                    </div>
                     </div><div class="ui-btn">
                     <a href="#projects" class="nav-link hover:text-green-400 transition-colors cursor-pointer" data-page="projects"><span>.projets</span></a>
                     </div><div class="ui-btn">
                     <a href="#skills" class="nav-link hover:text-green-400 transition-colors cursor-pointer" data-page="skills"><span>compétences[]</span></a>
+                    </div><div class="ui-btn">
+                    <a href="#veille" class="nav-link hover:text-green-400 transition-colors cursor-pointer" data-page="veille"><span>veille</span></a>
                     </div><div class="ui-btn">
                     <a href="#contact" class="nav-link hover:text-green-400 transition-colors cursor-pointer" data-page="contact"><span>contact()</span></a>
                     </div>

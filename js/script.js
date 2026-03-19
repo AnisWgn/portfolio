@@ -13,21 +13,107 @@
                 },
                 getIconClass(name) {
                     const icons = {
-                        'HTML': 'fa-brands fa-html5',
-                        'JavaScript': 'fa-brands fa-js',
-                        'PHP': 'fa-brands fa-php',
-                        'SQL': 'fa-solid fa-database'
+                        'HTML': 'icon/html.png',
+                        'CSS': 'icon/css.png',
+                        'JavaScript': 'icon/javascript.png',
+                        'PHP': 'icon/php.png',
+                        'Python': 'icon/python.png',
+                        'Java': 'icon/java.png',
+                        'SQL': 'icon/sql.png'
                     };
-                    return icons[name] || 'fa-solid fa-code';
+                    return icons[name] || 'icon/default.png';
                 },
                 getColor(name) {
                     const colors = {
                         'HTML': '#E34F26',
+                        'CSS': '#1572B6',
                         'JavaScript': '#F7DF1E',
                         'PHP': '#777BB4',
+                        'Python': '#3776AB',
+                        'Java': '#007396',
                         'SQL': '#336791'
                     };
                     return colors[name] || '#10b981';
+                }
+            }
+        }
+
+        // Experience component
+        function experienceComponent() {
+            return {
+                experiences: [],
+                async loadExperience() {
+                    try {
+                        const response = await fetch('JSON/experience.json');
+                        const data = await response.json();
+                        this.experiences = data || [];
+                    } catch (error) {
+                        console.error('Error loading experience:', error);
+                    }
+                }
+            }
+        }
+
+        // Réalisations component
+        function realisationsComponent() {
+            return {
+                realisations: [],
+                async loadRealisations() {
+                    try {
+                        const response = await fetch('JSON/realisations.json');
+                        const data = await response.json();
+                        this.realisations = data || [];
+                    } catch (error) {
+                        console.error('Error loading realisations:', error);
+                    }
+                }
+            }
+        }
+
+        // Veille informatique component (Dev.to API)
+        function veilleComponent() {
+            return {
+                articles: [],
+                loading: true,
+                error: false,
+                async loadVeille() {
+                    try {
+                        this.loading = true;
+                        this.error = false;
+                        const response = await fetch('https://dev.to/api/articles?per_page=6&tag=webdev');
+                        const data = await response.json();
+                        this.articles = data || [];
+                    } catch (err) {
+                        console.error('Error loading veille:', err);
+                        this.error = true;
+                        this.articles = [];
+                    } finally {
+                        this.loading = false;
+                    }
+                }
+            }
+        }
+
+        // Projects component
+        function projectsComponent() {
+            return {
+                projects: [],
+                async loadProjects() {
+                    try {
+                        const response = await fetch('JSON/projet.json');
+                        const data = await response.json();
+                        this.projects = data || [];
+                    } catch (error) {
+                        console.error('Error loading projects:', error);
+                    }
+                },
+                getStatusClass(status) {
+                    const classes = {
+                        'Live': 'bg-green-400/20 text-green-400',
+                        'Beta': 'bg-blue-400/20 text-blue-400',
+                        'WIP': 'bg-yellow-400/20 text-yellow-400'
+                    };
+                    return classes[status] || 'bg-gray-400/20 text-gray-400';
                 }
             }
         }
@@ -47,12 +133,12 @@
                 },
                 getIconClass(name) {
                     const icons = {
-                        'React': 'fa-brands fa-react',
-                        'Node.js': 'fa-brands fa-node-js',
-                        'Docker': 'fa-brands fa-docker',
-                        'Git': 'fa-brands fa-git-alt'
+                        'React': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
+                        'Node.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg',
+                        'Docker': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg',
+                        'Git': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg'
                     };
-                    return icons[name] || 'fa-solid fa-cogs';
+                    return icons[name] || '';
                 },
                 getColor(name) {
                     const colors = {
@@ -72,8 +158,11 @@
                 { id: 'header-include', file: 'section/header.html' },
                 { id: 'home-include', file: 'section/home.html' },
                 { id: 'about-include', file: 'section/about.html' },
+                { id: 'experience-include', file: 'section/experience.html' },
+                { id: 'realisations-include', file: 'section/realisations.html' },
                 { id: 'projects-include', file: 'section/projects.html' },
                 { id: 'skills-include', file: 'section/skills.html' },
+                { id: 'veille-include', file: 'section/veille.html' },
                 { id: 'contact-include', file: 'section/contact.html' }
             ];
 
@@ -81,7 +170,9 @@
                 try {
                     const response = await fetch(include.file);
                     const html = await response.text();
-                    document.getElementById(include.id).innerHTML = html;
+                    const el = document.getElementById(include.id);
+                    el.innerHTML = html;
+                    Alpine.initTree(el);
                 } catch (error) {
                     console.error(`Error loading ${include.file}:`, error);
                 }

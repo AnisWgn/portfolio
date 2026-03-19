@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Site vitrine personnalisable",
+        "image": "images/réalisation/web_cih.png",
+        "paragraph": "Conception et développement d'un site vitrine 100% personnalisable pour Concept Innov Habitat. Interface d'administration complète permettant de gérer le contenu sans code, avec des CRUD avancés et un éditeur visuel pour modifier en temps réel couleurs, dimensions et disposition des éléments."
+    },
+    {
+        "name": "Hub d'interfaces interactives",
+        "image": "images/réalisation/nexus-hub.png",
+        "paragraph": "Développement d'un hub en client dur permettant d'ajouter, modifier et accéder simplement à différentes interfaces. Chaque interface dispose de son propre dépôt GitHub et d'un guide d'utilisation personnalisable, offrant une centralisation et une documentation complète des outils."
+    },
+    {
+        "name": "Pipelines d'automatisation",
+        "image": "images/réalisation/automatisation.png",
+        "paragraph": "Mise en place de solutions d'automatisation pour MP44 : scraping de données entreprise, envoi de mails automatisés et orchestration de workflows. Développement de scripts et outils permettant de gagner en productivité et en fiabilité."
+    },
+    {
+        "name": "Solutions SaaS",
+        "image": "no-image",
+        "paragraph": "Participation à la conception et au développement de solutions SaaS. Projets actuellement en phase de lancement et soumis à confidentialité."
+    }
+]

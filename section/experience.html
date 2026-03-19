@@ -1,0 +1,29 @@
+        <!-- Experience Pro Section -->
+        <section id="experience" class="page-section">
+        <div class="container mx-auto px-6 w-full">
+            <h3 class="text-3xl font-bold mb-12 text-center">
+                <span>Expérience Professionnelle</span>
+                <span class="text-green-400 text-lg block mt-2">// Parcours et entreprises</span>
+            </h3>
+
+            <div x-data="experienceComponent()" x-init="loadExperience()">
+                <template x-if="experiences.length > 0">
+                    <div class="space-y-24 max-w-5xl mx-auto">
+                        <template x-for="(exp, index) in experiences" :key="exp.name">
+                            <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start" :class="index % 2 === 1 ? 'md:flex-row-reverse' : ''">
+                                <!-- Logo entreprise -->
+                                <div class="flex-shrink-0">
+                                    <img :src="exp.image" :alt="exp.name" class="w-48 h-48 md:w-64 md:h-64 rounded-lg object-contain" @error="$el.src='https://placehold.co/128x128/1f2937/10b981?text=' + exp.name">
+                                </div>
+                                <!-- Text -->
+                                <div class="flex-1 min-w-0" :class="index % 2 === 1 ? 'text-left' : 'text-right'">
+                                    <h4 class="text-2xl font-semibold text-green-400 mb-4" x-text="exp.name"></h4>
+                                    <p class="text-gray-300 text-lg leading-relaxed" x-text="exp.paragraph"></p>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
