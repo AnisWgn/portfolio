@@ -1,26 +1,26 @@
         <!-- Skills Section -->
         <section id="skills" class="page-section">
         <div class="container mx-auto px-6 w-full">
-            <h3 class="text-3xl font-bold mb-12 text-center">
+            <h3 class="text-3xl font-bold mb-14 text-center text-stone-900">
                 <span>Stack Technique</span>
-                <span class="text-green-400 text-lg block mt-2">// Outils que je prétends comprendre</span>
+                <span class="text-stone-500 text-xl font-normal block mt-3">Langages et outils du quotidien</span>
             </h3>
 
-            <div class="grid gap-10 max-w-4xl mx-auto">
+            <div class="grid gap-14 max-w-5xl mx-auto">
                 <!-- Languages -->
                 <div x-data="skillsComponent()" x-init="loadSkills()">
                     <template x-if="languages.length > 0">
                         <div>
-                            <h4 class="text-xl font-semibold mb-15 text-center md:text-right"><span class="button">Langages</span></h4>
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                            <h4 class="text-2xl font-semibold mb-10 text-center md:text-right"><span class="section-heading">Langages</span></h4>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                                 <template x-for="lang in languages" :key="lang.name">
                                     <div class="text-center group cursor-pointer">
-                                        <div class="text-5xl mb-2 group-hover:scale-110 transition-transform flex justify-center">
-                                            <img :src="lang.icon_url || getIconClass(lang.name)" :alt="lang.name" class="w-12 h-12 object-contain" @error="$el.style.display='none'">
+                                        <div class="text-6xl mb-3 group-hover:scale-110 transition-transform flex justify-center">
+                                            <img :src="lang.icon_url || getIconClass(lang.name)" :alt="lang.name" class="w-14 h-14 md:w-16 md:h-16 object-contain" @error="$el.style.display='none'">
                                         </div>
-                                        <p class="text-sm" x-text="lang.name"></p>
-                                        <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
-                                            <div class="bg-green-400 h-1 rounded-full" :style="'width: ' + lang.level + '%'"></div>
+                                        <p class="text-lg font-medium text-stone-800" x-text="lang.name"></p>
+                                        <div class="w-full bg-stone-200 rounded-full h-2 mt-3">
+                                            <div class="bg-teal-600 h-2 rounded-full" :style="'width: ' + lang.level + '%'"></div>
                                         </div>
                                     </div>
                                 </template>
@@ -33,16 +33,16 @@
                 <div x-data="toolsComponent()" x-init="loadTools()">
                     <template x-if="technologies.length > 0">
                         <div>
-                            <h4 class="text-xl font-semibold mb-15 mt-5 text-center md:text-right"><span class="button">Outils & Frameworks</span></h4>
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                            <h4 class="text-2xl font-semibold mb-10 mt-8 text-center md:text-right"><span class="section-heading">Outils &amp; frameworks</span></h4>
+                            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                                 <template x-for="tech in technologies" :key="tech.name">
                                         <div class="text-center group cursor-pointer">
-                                            <div class="text-5xl mb-2 group-hover:scale-110 transition-transform flex justify-center">
-                                                <img :src="tech.icon_url || getIconClass(tech.name)" :alt="tech.name" class="w-12 h-12 object-contain" @error="$el.style.display='none'">
+                                            <div class="text-6xl mb-3 group-hover:scale-110 transition-transform flex justify-center">
+                                                <img :src="tech.icon_url || getIconClass(tech.name)" :alt="tech.name" class="w-14 h-14 md:w-16 md:h-16 object-contain" @error="$el.style.display='none'">
                                             </div>
-                                            <p class="text-sm" x-text="tech.name"></p>
-                                            <div class="w-full bg-gray-800 rounded-full h-1 mt-2">
-                                                <div class="bg-green-400 h-1 rounded-full" :style="{ width: tech.level + '%' }"></div>
+                                            <p class="text-lg font-medium text-stone-800" x-text="tech.name"></p>
+                                            <div class="w-full bg-stone-200 rounded-full h-2 mt-3">
+                                                <div class="bg-teal-600 h-2 rounded-full" :style="{ width: tech.level + '%' }"></div>
                                             </div>
                                         </div>
                                 </template>

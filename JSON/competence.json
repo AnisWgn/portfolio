@@ -19,36 +19,57 @@
         "name": "JavaScript",
         "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
         "icon_class": "devicon-javascript-plain",
-        "versions": ["ES6", "ES2022"],
+        "versions": ["ES6+", "ES2024"],
         "level": "80"
+      },
+      {
+        "name": "TypeScript",
+        "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+        "icon_class": "devicon-typescript-plain",
+        "versions": ["5.x"],
+        "level": "72"
       },
       {
         "name": "PHP",
         "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg",
         "icon_class": "devicon-php-plain",
-        "versions": ["PHP 7", "PHP 8"],
-        "level": "70"
+        "versions": ["PHP 8"],
+        "level": "75"
+      },
+      {
+        "name": "Python",
+        "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+        "icon_class": "devicon-python-plain",
+        "versions": ["3.10+"],
+        "level": "62"
       },
       {
         "name": "SQL",
         "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
         "icon_class": "devicon-sql-plain",
         "versions": ["MySQL", "PostgreSQL"],
-        "level": "20"
+        "level": "68"
       },
       {
-        "name": "Python",
-        "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
-        "icon_class": "devicon-python-plain",
-        "versions": ["3.8", "3.9"],
-        "level": "60"
-      },
-      {
-        "name" : "Java",
+        "name": "Java",
         "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg",
         "icon_class": "devicon-java-plain",
-        "versions": ["Java 8", "Java 11"],
-        "level": "15"
+        "versions": ["11", "17"],
+        "level": "35"
+      },
+      {
+        "name": "Bash",
+        "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg",
+        "icon_class": "devicon-bash-plain",
+        "versions": ["shell"],
+        "level": "48"
+      },
+      {
+        "name": "C#",
+        "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg",
+        "icon_class": "devicon-csharp-plain",
+        "versions": [".NET"],
+        "level": "40"
       }
     ]
   },
@@ -58,30 +79,79 @@
         "name": "React",
         "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
         "icon_class": "devicon-react-original",
-        "versions": ["17", "18"],
-        "level": "40"
+        "versions": ["18"],
+        "level": "65"
+      },
+      {
+        "name": "Vue.js",
+        "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg",
+        "icon_class": "devicon-vuejs-plain",
+        "versions": ["3"],
+        "level": "58"
+      },
+      {
+        "name": "Next.js",
+        "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
+        "icon_class": "devicon-nextjs-plain",
+        "versions": ["13", "14"],
+        "level": "52"
       },
       {
         "name": "Node.js",
         "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
         "icon_class": "devicon-nodejs-plain",
-        "versions": ["14", "16"],
-        "level": "30"
+        "versions": ["18", "20"],
+        "level": "62"
+      },
+      {
+        "name": "Symfony",
+        "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/symfony/symfony-original.svg",
+        "icon_class": "devicon-symfony-plain",
+        "versions": ["6", "7"],
+        "level": "68"
+      },
+      {
+        "name": "Tailwind CSS",
+        "icon_url": "https://cdn.simpleicons.org/tailwindcss/06B6D4",
+        "icon_class": "devicon-tailwindcss-plain",
+        "versions": ["3", "4"],
+        "level": "82"
       },
       {
         "name": "Docker",
         "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
         "icon_class": "devicon-docker-plain",
-        "versions": ["20.10"],
-        "level": "20"
+        "versions": ["24+"],
+        "level": "58"
       },
       {
         "name": "Git",
         "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
         "icon_class": "devicon-git-plain",
-        "versions": ["2.30"],
+        "versions": ["2.40+"],
+        "level": "72"
+      },
+      {
+        "name": "PostgreSQL",
+        "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
+        "icon_class": "devicon-postgresql-plain",
+        "versions": ["15", "16"],
+        "level": "62"
+      },
+      {
+        "name": "Nginx",
+        "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg",
+        "icon_class": "devicon-nginx-plain",
+        "versions": ["1.24+"],
         "level": "50"
-       }
-     ]
+      },
+      {
+        "name": "Figma",
+        "icon_url": "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
+        "icon_class": "devicon-figma-plain",
+        "versions": [],
+        "level": "55"
+      }
+    ]
   }
 ]

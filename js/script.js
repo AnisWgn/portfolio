@@ -16,10 +16,13 @@
                         'HTML': 'icon/html.png',
                         'CSS': 'icon/css.png',
                         'JavaScript': 'icon/javascript.png',
+                        'TypeScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg',
                         'PHP': 'icon/php.png',
                         'Python': 'icon/python.png',
                         'Java': 'icon/java.png',
-                        'SQL': 'icon/sql.png'
+                        'SQL': 'icon/sql.png',
+                        'Bash': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg',
+                        'C#': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg'
                     };
                     return icons[name] || 'icon/default.png';
                 },
@@ -28,12 +31,15 @@
                         'HTML': '#E34F26',
                         'CSS': '#1572B6',
                         'JavaScript': '#F7DF1E',
+                        'TypeScript': '#3178C6',
                         'PHP': '#777BB4',
                         'Python': '#3776AB',
                         'Java': '#007396',
-                        'SQL': '#336791'
+                        'SQL': '#336791',
+                        'Bash': '#4EAA25',
+                        'C#': '#239120'
                     };
-                    return colors[name] || '#10b981';
+                    return colors[name] || '#0d9488';
                 }
             }
         }
@@ -70,30 +76,6 @@
             }
         }
 
-        // Veille informatique component (Dev.to API)
-        function veilleComponent() {
-            return {
-                articles: [],
-                loading: true,
-                error: false,
-                async loadVeille() {
-                    try {
-                        this.loading = true;
-                        this.error = false;
-                        const response = await fetch('https://dev.to/api/articles?per_page=6&tag=webdev');
-                        const data = await response.json();
-                        this.articles = data || [];
-                    } catch (err) {
-                        console.error('Error loading veille:', err);
-                        this.error = true;
-                        this.articles = [];
-                    } finally {
-                        this.loading = false;
-                    }
-                }
-            }
-        }
-
         // Projects component
         function projectsComponent() {
             return {
@@ -106,14 +88,6 @@
                     } catch (error) {
                         console.error('Error loading projects:', error);
                     }
-                },
-                getStatusClass(status) {
-                    const classes = {
-                        'Live': 'bg-green-400/20 text-green-400',
-                        'Beta': 'bg-blue-400/20 text-blue-400',
-                        'WIP': 'bg-yellow-400/20 text-yellow-400'
-                    };
-                    return classes[status] || 'bg-gray-400/20 text-gray-400';
                 }
             }
         }
@@ -134,20 +108,34 @@
                 getIconClass(name) {
                     const icons = {
                         'React': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg',
+                        'Vue.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg',
+                        'Next.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg',
                         'Node.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg',
+                        'Symfony': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/symfony/symfony-original.svg',
+                        'Tailwind CSS': 'https://cdn.simpleicons.org/tailwindcss/06B6D4',
                         'Docker': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg',
-                        'Git': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg'
+                        'Git': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg',
+                        'PostgreSQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg',
+                        'Nginx': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg',
+                        'Figma': 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg'
                     };
                     return icons[name] || '';
                 },
                 getColor(name) {
                     const colors = {
                         'React': '#61DAFB',
+                        'Vue.js': '#4FC08D',
+                        'Next.js': '#000000',
                         'Node.js': '#339933',
+                        'Symfony': '#000000',
+                        'Tailwind CSS': '#06B6D4',
                         'Docker': '#2496ED',
-                        'Git': '#F05032'
+                        'Git': '#F05032',
+                        'PostgreSQL': '#4169E1',
+                        'Nginx': '#009639',
+                        'Figma': '#F24E1E'
                     };
-                    return colors[name] || '#10b981';
+                    return colors[name] || '#0d9488';
                 }
             }
         }
@@ -162,8 +150,7 @@
                 { id: 'realisations-include', file: 'section/realisations.html' },
                 { id: 'projects-include', file: 'section/projects.html' },
                 { id: 'skills-include', file: 'section/skills.html' },
-                { id: 'veille-include', file: 'section/veille.html' },
-                { id: 'contact-include', file: 'section/contact.html' }
+                { id: 'veille-include', file: 'section/veille.html' }
             ];
 
             for (const include of includes) {
@@ -182,7 +169,6 @@
             const birthday = new Date(2006,12,17);
             const age = new Date().getFullYear() - birthday.getFullYear();
             document.getElementById("age").textContent = age;
-            document.getElementById('today_date').textContent = new Date().getFullYear();
         }
 
         // Load includes and then initialize navigation
@@ -195,6 +181,7 @@
         const follower = document.querySelector('.cursor-follower');
         
         document.addEventListener('mousemove', (e) => {
+            if (!cursor || !follower) return;
             cursor.style.left = e.clientX - 10 + 'px';
             cursor.style.top = e.clientY - 10 + 'px';
             
@@ -208,12 +195,14 @@
         const hoverElements = document.querySelectorAll('a, button, .project-card, .cursor-pointer');
         hoverElements.forEach(elem => {
             elem.addEventListener('mouseenter', () => {
+                if (!cursor) return;
                 cursor.style.transform = 'scale(2)';
-                cursor.style.borderColor = '#fff';
+                cursor.style.borderColor = '#0d9488';
             });
             elem.addEventListener('mouseleave', () => {
+                if (!cursor) return;
                 cursor.style.transform = 'scale(1)';
-                cursor.style.borderColor = '#10b981';
+                cursor.style.borderColor = '#0d9488';
             });
         });
         
@@ -240,16 +229,12 @@
         }
         
         function updateActiveNav(pageId) {
-            // Retirer la classe active de tous les liens
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('active');
             });
-            
-            // Ajouter la classe active au lien correspondant
-            const activeLink = document.querySelector(`.nav-link[data-page="${pageId}"]`);
-            if (activeLink) {
-                activeLink.classList.add('active');
-            }
+            document.querySelectorAll(`.nav-link[data-page="${pageId}"]`).forEach(link => {
+                link.classList.add('active');
+            });
         }
         
         function navigateToPage(pageId) {
@@ -284,19 +269,9 @@
             });
         }
         
-        // Random glitch effect
-        const glitchElement = document.querySelector('.glitch');
-        setInterval(() => {
-            if (Math.random() > 0.95) {
-                glitchElement.style.animation = 'none';
-                setTimeout(() => {
-                    glitchElement.style.animation = 'glitch 2s infinite';
-                }, 100);
-            }
-        }, 3000);
-        
+        // Random glitch retiré (titre hero sobre)
         // Console Easter egg
-        console.log('%c Hey there, fellow developer! 👋', 'color: #10b981; font-size: 20px; font-weight: bold;');
+        console.log('%c Bonjour !', 'color: #0d9488; font-size: 18px; font-weight: bold;');
         console.log('%c Looking for secrets? You found one! 🎉', 'color: #888; font-size: 14px;');
         console.log('%c Email me with the code "CONSOLE_DETECTIVE" for a surprise!', 'color: #888; font-size: 12px;');
         

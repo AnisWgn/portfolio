@@ -1,9 +1,9 @@
         <!-- Réalisations Pro Section -->
         <section id="realisations" class="page-section">
         <div class="container mx-auto px-6 w-full">
-            <h3 class="text-3xl font-bold mb-12 text-center">
+            <h3 class="text-3xl font-bold mb-14 text-center text-stone-900">
                 <span>Réalisations Professionnelles</span>
-                <span class="text-green-400 text-lg block mt-2">// Projets et accomplissements</span>
+                <span class="text-stone-500 text-xl font-normal block mt-3">Projets et accomplissements</span>
             </h3>
 
             <div x-data="realisationsComponent()" x-init="loadRealisations()">
@@ -12,19 +12,19 @@
                         <template x-for="(real, index) in realisations" :key="real.name">
                             <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start" :class="index % 2 === 1 ? 'md:flex-row-reverse' : ''">
                                 <!-- Image ou placeholder confidentiel -->
-                                <div class="flex-shrink-0 w-80 md:w-[30rem] aspect-video rounded-lg flex items-center justify-center bg-gray-900/50 border border-gray-800 overflow-hidden">
+                                <div class="flex-shrink-0 w-80 md:w-[30rem] aspect-video rounded-xl flex items-center justify-center bg-stone-100 border border-stone-200 overflow-hidden shadow-sm">
                                     <template x-if="real.image && real.image !== 'no-image'">
                                         <img :src="real.image" :alt="real.name" class="w-full h-full object-contain" @error="$el.style.display='none'; $el.nextElementSibling.style.display='flex'">
                                     </template>
-                                    <div x-show="!real.image || real.image === 'no-image'" class="flex flex-col items-center justify-center gap-2 text-gray-500 p-4">
+                                    <div x-show="!real.image || real.image === 'no-image'" class="flex flex-col items-center justify-center gap-2 text-stone-500 p-4">
                                         <svg class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
-                                        <span class="text-sm">Confidentiel</span>
+                                        <span class="text-base">Confidentiel</span>
                                     </div>
                                 </div>
                                 <!-- Text -->
                                 <div class="flex-1 min-w-0" :class="index % 2 === 1 ? 'text-left' : 'text-right'">
-                                    <h4 class="text-2xl font-semibold text-green-400 mb-4" x-text="real.name || ''"></h4>
-                                    <p class="text-gray-300 text-lg leading-relaxed" x-text="real.paragraph || ''"></p>
+                                    <h4 class="text-3xl font-semibold text-teal-800 mb-5" x-text="real.name || ''"></h4>
+                                    <p class="text-stone-700 text-xl md:text-2xl leading-relaxed" x-text="real.paragraph || ''"></p>
                                 </div>
                             </div>
                         </template>

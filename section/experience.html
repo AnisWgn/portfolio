@@ -1,9 +1,9 @@
         <!-- Experience Pro Section -->
         <section id="experience" class="page-section">
         <div class="container mx-auto px-6 w-full">
-            <h3 class="text-3xl font-bold mb-12 text-center">
+            <h3 class="text-3xl font-bold mb-14 text-center text-stone-900">
                 <span>Expérience Professionnelle</span>
-                <span class="text-green-400 text-lg block mt-2">// Parcours et entreprises</span>
+                <span class="text-stone-500 text-xl font-normal block mt-3">Parcours et missions</span>
             </h3>
 
             <div x-data="experienceComponent()" x-init="loadExperience()">
@@ -13,12 +13,12 @@
                             <div class="flex flex-col md:flex-row gap-6 md:gap-8 items-start" :class="index % 2 === 1 ? 'md:flex-row-reverse' : ''">
                                 <!-- Logo entreprise -->
                                 <div class="flex-shrink-0">
-                                    <img :src="exp.image" :alt="exp.name" class="w-48 h-48 md:w-64 md:h-64 rounded-lg object-contain" @error="$el.src='https://placehold.co/128x128/1f2937/10b981?text=' + exp.name">
+                                    <img :src="exp.image" :alt="exp.name" class="w-48 h-48 md:w-64 md:h-64 rounded-xl object-contain bg-white border border-stone-200 shadow-sm p-2" @error="$el.src='https://placehold.co/128x128/f5f5f4/57534e?text=' + exp.name">
                                 </div>
                                 <!-- Text -->
                                 <div class="flex-1 min-w-0" :class="index % 2 === 1 ? 'text-left' : 'text-right'">
-                                    <h4 class="text-2xl font-semibold text-green-400 mb-4" x-text="exp.name"></h4>
-                                    <p class="text-gray-300 text-lg leading-relaxed" x-text="exp.paragraph"></p>
+                                    <h4 class="text-3xl font-semibold text-teal-800 mb-5" x-text="exp.name"></h4>
+                                    <p class="text-stone-700 text-xl md:text-2xl leading-relaxed" x-text="exp.paragraph"></p>
                                 </div>
                             </div>
                         </template>

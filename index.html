@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
     
@@ -50,14 +50,13 @@
     }
     </script>
 </head>
-<body class="bg-black text-gray-100 relative">
+<body class="bg-stone-50 text-stone-800 relative antialiased">
     
-    <div class="noise"></div>
-    
+    <div class="noise" aria-hidden="true"></div>
 
-    // Custom Cursor Elements
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
+    <!-- Curseur custom désactivé visuellement (voir style.css) -->
+    <div class="cursor" hidden></div>
+    <div class="cursor-follower" hidden></div>
     
     <div id="header-include"></div>
     
@@ -76,8 +75,6 @@
         <div id="skills-include"></div>
     
         <div id="veille-include"></div>
-    
-        <div id="contact-include"></div>
     </div>
     
     <script src="js/script.js"></script>

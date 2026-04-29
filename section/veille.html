@@ -1,46 +1,107 @@
         <!-- Veille Informatique Section -->
-        <section id="veille" class="page-section">
-        <div class="container mx-auto px-6 w-full">
-            <h3 class="text-3xl font-bold mb-12 text-center">
-                <span>Veille Informatique</span>
-                <span class="text-green-400 text-lg block mt-2">// Articles Dev.to - Dernières tendances</span>
-            </h3>
+        <section id="veille" class="page-section veille-page">
+        <div class="container mx-auto px-6 md:px-8 w-full max-w-6xl py-10">
+            <header class="text-center mb-16">
+                <h3 class="font-bold text-stone-900 mb-5">
+                    Veille informatique
+                </h3>
+                <p class="text-stone-600 text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed">
+                    Sources que j'utilise pour rester à jour, puis les axes que je suis en priorité.
+                </p>
+            </header>
 
-            <div x-data="veilleComponent()" x-init="loadVeille()">
-                <template x-if="loading">
-                    <div class="flex justify-center py-16">
-                        <div class="animate-pulse text-gray-500">Chargement des articles...</div>
+            <div class="mb-16">
+                <h4 class="text-sm font-bold tracking-widest text-teal-700 uppercase mb-8">
+                    Sites &amp; ressources
+                </h4>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <a href="https://dev.to" target="_blank" rel="noopener noreferrer" class="group flex gap-5 p-6 rounded-xl bg-white border border-stone-200 shadow-sm hover:border-teal-300 hover:shadow transition-all cursor-pointer">
+                        <span class="text-teal-600 text-3xl shrink-0 pt-1" aria-hidden="true"><i class="fa-solid fa-newspaper"></i></span>
+                        <div class="min-w-0">
+                            <span class="font-semibold text-stone-900 text-lg block mb-2 group-hover:text-teal-800 transition-colors">Dev.to</span>
+                            <p class="text-stone-600 text-base md:text-lg leading-snug">Articles et tutoriels de la communauté développeur, tags filtrables.</p>
+                        </div>
+                    </a>
+                    <div class="flex gap-5 p-6 rounded-xl bg-white border border-stone-200 shadow-sm">
+                        <span class="text-teal-600 text-3xl shrink-0 pt-1" aria-hidden="true"><i class="fa-solid fa-desktop"></i></span>
+                        <div class="min-w-0">
+                            <span class="font-semibold text-stone-900 text-lg block mb-2">SyncCore</span>
+                            <p class="text-stone-600 text-base md:text-lg leading-snug">Mon application desktop (Electron) : outils dev regroupés, dont une veille informatique alimentée par l'API Dev.to.</p>
+                        </div>
                     </div>
-                </template>
-                <template x-if="!loading && articles.length > 0">
-                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                        <template x-for="article in articles" :key="article.id">
-                            <a :href="article.url" target="_blank" rel="noopener noreferrer" class="group block bg-gray-900/50 border border-gray-800 rounded-lg overflow-hidden hover:border-green-400/50 transition-all cursor-pointer">
-                                <div class="aspect-video bg-gray-800 overflow-hidden">
-                                    <img :src="article.cover_image || article.social_image || 'https://placehold.co/600x340/1f2937/10b981?text=Dev.to'" :alt="article.title" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" @error="$el.src='https://placehold.co/600x340/1f2937/10b981?text=Article'">
-                                </div>
-                                <div class="p-5">
-                                    <h4 class="text-lg font-semibold text-gray-100 group-hover:text-green-400 transition-colors line-clamp-2 mb-2" x-text="article.title"></h4>
-                                    <p class="text-gray-400 text-sm line-clamp-2 mb-4" x-text="article.description || ''"></p>
-                                    <div class="flex flex-wrap gap-2 mb-3">
-                                        <template x-for="tag in (article.tag_list || []).slice(0, 3)" :key="tag">
-                                            <span class="text-xs px-2 py-0.5 bg-gray-800 text-gray-400 rounded" x-text="tag"></span>
-                                        </template>
-                                    </div>
-                                    <div class="flex items-center justify-between text-xs text-gray-500">
-                                        <span x-text="article.user?.name || 'Dev.to'"></span>
-                                        <span x-text="(article.readable_publish_date || '') + ' · ' + (article.reading_time_minutes || 0) + ' min'"></span>
-                                    </div>
-                                </div>
-                            </a>
-                        </template>
-                    </div>
-                </template>
-                <template x-if="!loading && articles.length === 0 && error">
-                    <div class="text-center py-16 text-gray-500">
-                        <p>Impossible de charger les articles. Vérifiez votre connexion.</p>
-                    </div>
-                </template>
+                    <a href="https://nvd.nist.gov/" target="_blank" rel="noopener noreferrer" class="group flex gap-5 p-6 rounded-xl bg-white border border-stone-200 shadow-sm hover:border-teal-300 hover:shadow transition-all cursor-pointer">
+                        <img src="https://cdn.simpleicons.org/nist/0c2340" width="40" height="40" alt="" class="h-9 w-9 shrink-0 object-contain self-start mt-0.5 opacity-90 group-hover:opacity-100 transition-opacity" loading="lazy" decoding="async">
+                        <div class="min-w-0">
+                            <span class="font-semibold text-stone-900 text-lg block mb-2 group-hover:text-teal-800 transition-colors">NVD (CVE)</span>
+                            <p class="text-stone-600 text-base md:text-lg leading-snug">National Vulnerability Database — suivi des CVE et correctifs (veille 0-day).</p>
+                        </div>
+                    </a>
+                    <a href="https://github.com/explore" target="_blank" rel="noopener noreferrer" class="group flex gap-5 p-6 rounded-xl bg-white border border-stone-200 shadow-sm hover:border-teal-300 hover:shadow transition-all cursor-pointer">
+                        <span class="text-teal-600 text-3xl shrink-0 pt-1" aria-hidden="true"><i class="fa-brands fa-github"></i></span>
+                        <div class="min-w-0">
+                            <span class="font-semibold text-stone-900 text-lg block mb-2 group-hover:text-teal-800 transition-colors">GitHub Explore</span>
+                            <p class="text-stone-600 text-base md:text-lg leading-snug">Tendances, projets populaires et releases dans l'open source.</p>
+                        </div>
+                    </a>
+                    <a href="https://news.ycombinator.com" target="_blank" rel="noopener noreferrer" class="group flex gap-5 p-6 rounded-xl bg-white border border-stone-200 shadow-sm hover:border-teal-300 hover:shadow transition-all cursor-pointer">
+                        <span class="text-teal-600 text-3xl shrink-0 pt-1" aria-hidden="true"><i class="fa-solid fa-link"></i></span>
+                        <div class="min-w-0">
+                            <span class="font-semibold text-stone-900 text-lg block mb-2 group-hover:text-teal-800 transition-colors">Hacker News</span>
+                            <p class="text-stone-600 text-base md:text-lg leading-snug">Actu tech, discussions et liens vers articles techniques.</p>
+                        </div>
+                    </a>
+                    <a href="https://owasp.org" target="_blank" rel="noopener noreferrer" class="group flex gap-5 p-6 rounded-xl bg-white border border-stone-200 shadow-sm hover:border-teal-300 hover:shadow transition-all cursor-pointer">
+                        <span class="text-teal-600 text-3xl shrink-0 pt-1" aria-hidden="true"><i class="fa-solid fa-lock"></i></span>
+                        <div class="min-w-0">
+                            <span class="font-semibold text-stone-900 text-lg block mb-2 group-hover:text-teal-800 transition-colors">OWASP</span>
+                            <p class="text-stone-600 text-base md:text-lg leading-snug">Référentiels sécurité web (Top 10, ASVS, cheatsheets).</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="text-sm font-bold tracking-widest text-teal-700 uppercase mb-8">
+                    Thématiques suivies
+                </h4>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <article class="rounded-xl bg-white border border-stone-200 shadow-sm p-8">
+                        <h5 class="text-2xl font-bold text-stone-900 mb-5">Développement full-stack</h5>
+                        <div class="h-px bg-stone-200 mb-5"></div>
+                        <p class="text-sm font-bold tracking-widest text-teal-700 uppercase mb-4">Pourquoi</p>
+                        <p class="text-stone-600 text-base md:text-lg leading-relaxed">Pour concevoir des produits de bout en bout : cohérence entre interface et serveur, choix d'architecture et livraison de features complètes sans silo front/back.</p>
+                    </article>
+                    <article class="rounded-xl bg-white border border-stone-200 shadow-sm p-8">
+                        <h5 class="text-2xl font-bold text-stone-900 mb-5">Sécurité &amp; failles (0-day, CVE)</h5>
+                        <div class="h-px bg-stone-200 mb-5"></div>
+                        <p class="text-sm font-bold tracking-widest text-teal-700 uppercase mb-4">Pourquoi</p>
+                        <p class="text-stone-600 text-base md:text-lg leading-relaxed">Pour anticiper les incidents : comprendre les vulnérabilités, les correctifs et les bonnes pratiques avant qu'elles n'impactent les utilisateurs ou la prod.</p>
+                    </article>
+                    <article class="rounded-xl bg-white border border-stone-200 shadow-sm p-8">
+                        <h5 class="text-2xl font-bold text-stone-900 mb-5">Intelligence artificielle &amp; LLM</h5>
+                        <div class="h-px bg-stone-200 mb-5"></div>
+                        <p class="text-sm font-bold tracking-widest text-teal-700 uppercase mb-4">Pourquoi</p>
+                        <p class="text-stone-600 text-base md:text-lg leading-relaxed">L'IA bouleverse les outils et les produits ; suivre ce domaine permet d'intégrer des usages pertinents (assistants, automatisation) sans sacrifier qualité ni éthique.</p>
+                    </article>
+                    <article class="rounded-xl bg-white border border-stone-200 shadow-sm p-8">
+                        <h5 class="text-2xl font-bold text-stone-900 mb-5">Symfony &amp; PHP</h5>
+                        <div class="h-px bg-stone-200 mb-5"></div>
+                        <p class="text-sm font-bold tracking-widest text-teal-700 uppercase mb-4">Pourquoi</p>
+                        <p class="text-stone-600 text-base md:text-lg leading-relaxed">Framework et langage au cœur de nombreux projets web robustes ; rester à jour sur les releases et l'écosystème évite la dette technique et améliore la maintenabilité.</p>
+                    </article>
+                    <article class="rounded-xl bg-white border border-stone-200 shadow-sm p-8">
+                        <h5 class="text-2xl font-bold text-stone-900 mb-5">JavaScript &amp; écosystème front</h5>
+                        <div class="h-px bg-stone-200 mb-5"></div>
+                        <p class="text-sm font-bold tracking-widest text-teal-700 uppercase mb-4">Pourquoi</p>
+                        <p class="text-stone-600 text-base md:text-lg leading-relaxed">L'outillage et les standards front évoluent vite ; la veille aide à choisir les bonnes libs, les perfs et une DX durable sur le long terme.</p>
+                    </article>
+                    <article class="rounded-xl bg-white border border-stone-200 shadow-sm p-8">
+                        <h5 class="text-2xl font-bold text-stone-900 mb-5">API &amp; architectures web</h5>
+                        <div class="h-px bg-stone-200 mb-5"></div>
+                        <p class="text-sm font-bold tracking-widest text-teal-700 uppercase mb-4">Pourquoi</p>
+                        <p class="text-stone-600 text-base md:text-lg leading-relaxed">Les APIs relient services et clients ; suivre les patterns (REST, GraphQL, événements) et les erreurs classiques évite les systèmes fragiles ou difficiles à faire évoluer.</p>
+                    </article>
+                </div>
             </div>
         </div>
     </section>
